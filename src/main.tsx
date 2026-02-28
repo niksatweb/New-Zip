@@ -8,7 +8,7 @@ import { RouterProvider } from "react-router/dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>This is the text from the router element</div>,
+    element: <App />,
   },
 ]);
 
@@ -16,7 +16,7 @@ const root = document.getElementById("root");
 
 createRoot(root!).render(
   <StrictMode>
-   <RouterProvider router={router}>
-     </RouterProvider> 
+    <RouterProvider router={router}>
+    </RouterProvider>
   </StrictMode>,
 );
