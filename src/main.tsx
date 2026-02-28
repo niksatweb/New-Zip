@@ -8,11 +8,7 @@ import { RouterProvider } from "react-router/dom";
 const router = createBrowserRouter([
   {
     path: "/",
-<<<<<<< HEAD
     element: <App />,
-=======
-    element: <App/>,
->>>>>>> tailwind
   },
 ]);
 
