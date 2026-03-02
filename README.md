@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# Project structure
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The structure of the layout is based on [FSD](https://feature-sliced.design/docs/get-started/overview)
 
-Currently, two official plugins are available:
+## Layers
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- app
+- pages
+- widgets
+- features
+- entities
+- shared
 
-## React Compiler
+## Segments
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ui - templates
+- api
+- model - shemase, interfaces, stores, business logic
+- lib - some functions
+- config
 
-## Expanding the ESLint configuration
+## example
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+└── entities/
+    └── user/
+        ├── model/
+        │   ├── usler.types.ts         # Types and interfaces
+        │   ├── user.entity.ts         # Entity class
+        │   ├── user.store.ts          # Store
+        │   ├── user.schema.ts         #  Zod/Yup
+        │   └── index.ts
+        ├── api/
+        │   ├── user.api.ts
+        │   └── index.ts
+        ├── lib/
+        │   ├── user.utils.ts
+        │   ├── user.mappers.ts
+        │   └── index.ts
+        ├── config/
+        │   ├── user.constants.ts      # Only constants
+        │   └── index.ts
+        ├── ui/
+        │   ├── UserCard/
+        │   │   ├── UserCard.tsx
+        │   │   └── index.ts
+        │   └── index.ts
+        └── index.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Commit
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+<branch> <type>: <some-comment>
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- fix fix bug
+- feat add new feature
+- refactor improve code without changing behavior
+- docs update documentation
+- style format code, fix indentation
+- perf improve performance
+- test add or update tests
+- chore update dependencies, configs
+- build change build system
+- ci update CI/CD configuration
+- revert revert previous commit
