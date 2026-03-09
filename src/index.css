@@ -1,3 +1,13 @@
+<<<<<<< add-router
+@import "tailwindcss";
+@plugin "daisyui";
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+=======
 
 
 :root {
@@ -67,4 +77,5 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+>>>>>>> main
 }
