@@ -3,5 +3,3 @@ export const Button = () => {
     <div className="btn btn-dash uppercase">МЕНЮ</div>
   )
 }
-
-export default Button
