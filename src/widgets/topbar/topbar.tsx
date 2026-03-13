@@ -1,7 +1,6 @@
-import {Logo} from "@/shared/assets/images"
+import { Button } from "@/shared/ui"
+
 
 export function Topbar() {
-  return <div>
-    <Logo/>
-  </div>
+  return <div><Button/></div>
 }
