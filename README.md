@@ -64,4 +64,3 @@ src/
 - build change build system
 - ci update CI/CD configuration
 - revert revert previous commit
-- deps dependency changes
