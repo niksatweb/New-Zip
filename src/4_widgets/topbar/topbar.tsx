@@ -1,4 +1,4 @@
-import { Button } from "@/shared/ui"
+import { Button } from "@/7_shared/ui"
 
 
 export function Topbar() {
