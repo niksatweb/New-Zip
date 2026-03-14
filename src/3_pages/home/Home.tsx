@@ -1,4 +1,4 @@
-import { Title } from "./ui/title"
+import { Title } from "./ui/Title"
 
 export function Home() {
   return (
