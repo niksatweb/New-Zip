@@ -1,5 +1,5 @@
 import { ShoppingCart } from "lucide-react"
-import { ButtonIcon, ButtonIconText } from "@/7_shared/ui/icons"
+import { ButtonIcon, ButtonIconText } from "@/7_shared/ui/button"
 
 export const CartButton = ({ className, title }: { className?: string, title?: string }) => {
     return (
