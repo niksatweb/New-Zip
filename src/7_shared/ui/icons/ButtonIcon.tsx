@@ -1,9 +1,9 @@
-import { UserCircleIcon } from "lucide-react"
+import type { ReactNode } from "react"
 
-export const ButtonIcon = ({ className, title }: { className?: string, title?: string }) => {
+export const ButtonIcon = ({ className, title, href, children }: { className?: string, title?: string, href: string, children?: ReactNode }) => {
     return (
-        <a title={title} href="#">
-            <UserCircleIcon className={className}></UserCircleIcon>
+        <a title={title} href={href} className={className}>
+            {children}
         </a>
     )
 }
