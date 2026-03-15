@@ -1,4 +1,4 @@
-import { ButtonIcon, ButtonIconText } from "@/7_shared/ui/button"
+import { ButtonIcon, ButtonIconText } from "@/7_shared/ui/buttons"
 import { Heart } from "lucide-react"
 
 export const FavoritesButton = ({ className, title }: { className?: string, title?: string }) => {
