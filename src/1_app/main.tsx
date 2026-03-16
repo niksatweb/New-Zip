@@ -9,7 +9,7 @@ const root = document.getElementById("root")
 
 createRoot(root!).render(
   <StrictMode>
-    <Topbar />
+    <Topbar className="mx-auto" />
     <RouterProvider router={Router}></RouterProvider>
   </StrictMode>
 )
