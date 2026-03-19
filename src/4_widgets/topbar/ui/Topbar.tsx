@@ -28,6 +28,7 @@ export function Topbar({ className }: { className?: string }) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className={"container max-w-354 px-1 h-15 flex justify-between items-center gap-x-5 " + (className ?? '')}>
 =======
     <Container>
@@ -38,6 +39,9 @@ export function Topbar({ className }: { className?: string }) {
 =======
     <Container>
 >>>>>>> 56fae87 (15-add-hero: WIP)
+=======
+    <Container className={"h-12 " + (className ?? "")}>
+>>>>>>> 8eac456 (15-add-hero: WIP)
       <Logo className="uppercase font-bold text-4xl whitespace-nowrap" />
       <SearchInput className="flex-1"></SearchInput>
       <div className="items-center md:justify-between gap-x-4 flex">
