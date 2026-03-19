@@ -4,7 +4,7 @@ export const Container = ({children, className} : {children: ReactNode, classNam
   return (
     <div
       className={
-        "container max-w-354 px-1 flex justify-between items-center " +
+        "mx-auto container max-w-354 px-1 h-12 flex justify-between items-center " +
         (className ?? "")
       }
     >

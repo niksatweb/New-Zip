@@ -2,8 +2,8 @@ import { Hero } from "@/4_widgets/hero"
 
 export function Home() {
   return (
-    <>
-      <Hero className="mx-auto"/>
+    <div>
+      <Hero />
       <div>This is home page</div>
     </>
   )
