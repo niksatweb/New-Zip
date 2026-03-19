@@ -16,7 +16,7 @@ export function Topbar({ className }: { className: string }) {
         <AskQuestionButton className="bg-accent hover:bg-accent/80 px-4 py-1 rounded-2xl whitespace-nowrap justify-end"></AskQuestionButton>
       </div>
       <div className="flex md:hidden" >
-        <HamburgerButton onClick={handleClick} href="#" />
+        <HamburgerButton onClick={handleClick} href="#" className="relative" />
         <div className="absolute right-0 top-12 z-10 bg-primary-content w-full px-1">
           {mobMenuIsOpen && <Navbar className="flex flex-col text-md md:hidden w-full text-center gap-y-4 h-40 justify-center" />}
         </div>
