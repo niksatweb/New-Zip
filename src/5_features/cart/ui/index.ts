@@ -1,1 +1,1 @@
-export {CartButton} from "./CartButton"
+export { CartButton } from "./CartButton"

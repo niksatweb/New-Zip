@@ -1,6 +1,12 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from "react"
 
-export const Container = ({children, className} : {children: ReactNode, className?: string}) => {
+export const Container = ({
+  children,
+  className,
+}: {
+  children: ReactNode
+  className?: string
+}) => {
   return (
     <div
       className={
@@ -10,5 +16,5 @@ export const Container = ({children, className} : {children: ReactNode, classNam
     >
       {children}
     </div>
-  );
-};
+  )
+}
