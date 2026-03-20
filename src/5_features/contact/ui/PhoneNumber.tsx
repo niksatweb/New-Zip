@@ -1,6 +1,6 @@
 import { Phone } from "lucide-react"
 
-export const PhoneNumber = ({className}:{className?: string}) => {
+export const PhoneNumber = ({ className }: { className?: string }) => {
   return (
     <a href="tel:88124481523" className={className}>
       <Phone className="size-8" />

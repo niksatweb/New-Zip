@@ -1,13 +1,13 @@
-import { Logo } from "@/7_shared/assets/images/Logo";
-import { HamburgerButton } from "@/7_shared/ui/buttons/HamburgerButton";
-import { Navbar } from "../../navbar";
-import { AskQuestionButton } from "@/7_shared/ui/buttons/AskQuestionButton";
-import { useState } from "react";
-import { Container } from "@/7_shared/ui";
+import { Logo } from "@/7_shared/assets/images/Logo"
+import { HamburgerButton } from "@/7_shared/ui/buttons/HamburgerButton"
+import { Navbar } from "../../navbar"
+import { AskQuestionButton } from "@/7_shared/ui/buttons/AskQuestionButton"
+import { useState } from "react"
+import { Container } from "@/7_shared/ui"
 
 export function Topbar({ className }: { className?: string }) {
-  const [mobMenuIsOpen, setMobMenuOpen] = useState(false);
-  const handleClick = () => setMobMenuOpen(!mobMenuIsOpen);
+  const [mobMenuIsOpen, setMobMenuOpen] = useState(false)
+  const handleClick = () => setMobMenuOpen(!mobMenuIsOpen)
 
   return (
     <Container className={"h-12 " + (className ?? "")}>
@@ -25,5 +25,5 @@ export function Topbar({ className }: { className?: string }) {
         </div>
       </div>
     </Container>
-  );
+  )
 }
