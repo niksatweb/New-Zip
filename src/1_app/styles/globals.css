@@ -7,9 +7,6 @@
 @plugin "daisyui/theme" {
     name: "light";
     default: true;
-    --color-primary: blue;
-    --color-secondary: teal;
-
     --color-primary: #374151;
     --color-primary-content: #f3f4f6;
     --color-secondary: #1e3a8a;
@@ -17,10 +14,4 @@
     --color-accent: var(--color-amber-400);
     --color-base-100: #f3f4f6;
     --color-base-content: #374151;
-}
-
-
-body {
-    background-color: var(--color-primary-content);
-    color: var(--color-primary);
 }
