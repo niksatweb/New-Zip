@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 export const Logo = ({ className, href="#" }: { className: string, href?: string }) => {
     return (
         <a href={href} className="flex items-center  gap-x-1">
@@ -6,3 +7,21 @@ export const Logo = ({ className, href="#" }: { className: string, href?: string
         </a>
     )
 }
+=======
+export const Logo = ({
+  className,
+  href = "#",
+}: {
+  className: string
+  href?: string
+}) => {
+  return (
+    <a href={href} className="flex items-center  gap-x-1">
+      <span className={`${className} leading-none`}>New-Zip</span>
+      <span className="text-xs ml-1 max-w-45 hidden sm:block">
+        Поставки промышленных комплектующих и запчастей
+      </span>
+    </a>
+  )
+}
+>>>>>>> Stashed changes

@@ -9,7 +9,6 @@ export const SearchInput = ({ className }: { className: string }) => {
             />
             <div className="w-full flex">
             <datalist id="search-suggestions">
-                <option value="React"></option>
             </datalist>
             </div>
         </div>
