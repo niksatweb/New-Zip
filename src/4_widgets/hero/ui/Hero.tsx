@@ -1,4 +1,4 @@
-import { Container } from "@/7_shared/ui";
+import { Container } from "@/7_shared/ui"
 
 export const Hero = ({ className }: { className?: string }) => {
   return (
@@ -9,5 +9,5 @@ export const Hero = ({ className }: { className?: string }) => {
         </h1>
       </div>
     </Container>
-  );
-};
+  )
+}

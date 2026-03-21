@@ -1,16 +1,16 @@
-import { Logo } from "@/7_shared/assets/images/Logo";
-import { HamburgerButton } from "@/7_shared/ui/buttons/HamburgerButton";
-import { Navbar } from "../../navbar";
-import { AskQuestionButton } from "@/7_shared/ui/buttons/AskQuestionButton";
-import { useState } from "react";
-import { Container } from "@/7_shared/ui";
+import { Logo } from "@/7_shared/assets/images/Logo"
+import { HamburgerButton } from "@/7_shared/ui/buttons/HamburgerButton"
+import { Navbar } from "../../navbar"
+import { AskQuestionButton } from "@/7_shared/ui/buttons/AskQuestionButton"
+import { useState } from "react"
+import { Container } from "@/7_shared/ui"
 
-export function Topbar({ className }: { className: string }) {
-  const [mobMenuIsOpen, setMobMenuOpen] = useState(false);
-  const handleClick = () => setMobMenuOpen(!mobMenuIsOpen);
+export function Topbar({ className }: { className?: string }) {
+  const [mobMenuIsOpen, setMobMenuOpen] = useState(false)
+  const handleClick = () => setMobMenuOpen(!mobMenuIsOpen)
 
   return (
-    <Container>
+    <Container className={"h-12 " + (className ?? "")}>
       <Logo className="uppercase font-bold text-4xl whitespace-nowrap" />
       <SearchInput className="flex-1"></SearchInput>
       <div className="items-center md:justify-between gap-x-4 flex">
@@ -26,5 +26,5 @@ export function Topbar({ className }: { className: string }) {
         </div>
       </div>
     </Container>
-  );
+  )
 }
