@@ -25,7 +25,7 @@ export function Topbar({ className }: { className: string }) {
           {mobMenuIsOpen && <Navbar className="flex flex-col text-md md:hidden w-full text-center gap-y-4 h-40 justify-center" />}
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
 
