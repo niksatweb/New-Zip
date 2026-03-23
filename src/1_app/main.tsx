@@ -9,7 +9,7 @@ const root = document.getElementById("root")
 
 createRoot(root!).render(
   <StrictMode>
-    <Topbar className="mx-auto" />
+    <Topbar className="mx-auto lg:justify-between" />
     <RouterProvider router={Router}></RouterProvider>
   </StrictMode>
 )
