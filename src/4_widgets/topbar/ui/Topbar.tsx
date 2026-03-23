@@ -15,8 +15,8 @@ export function Topbar({ className }: { className: string }) {
       className={"self-end h-12 lg:flex lg:gap-x-10 " + (className ?? "")}
     >
       <Logo className="uppercase font-bold text-4xl whitespace-nowrap" />
-      <SearchInput className="block lg:flex-1 justify-end md:mx-0 ml-auto"></SearchInput>
-      <div className="items-center md:justify-between gap-x-4 flex">
+      <SearchInput className="flex lg:flex-1 justify-end md:mx-0 ml-auto"></SearchInput>
+      <div className="items-center md:justify-between gap-x-4 flex justify-end">
         <Navbar className="hidden md:flex gap-x-6 " />
         <AskQuestionButton className="bg-accent hover:bg-accent/80 px-4 py-1 rounded-2xl whitespace-nowrap justify-end"></AskQuestionButton>
       </div>
