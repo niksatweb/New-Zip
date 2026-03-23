@@ -14,7 +14,3 @@ export const Logo = ({
     </a>
   )
 }
-<<<<<<< HEAD
->>>>>>> 56c1805 (15-add-hero: WIP)
-=======
->>>>>>> 4238c89 (13-add-topbar: WIP)
