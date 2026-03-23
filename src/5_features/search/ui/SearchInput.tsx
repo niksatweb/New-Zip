@@ -1,4 +1,3 @@
-import { ButtonIcon } from "@/7_shared/ui/buttons"
 import SearchButton from "./SearchButton"
 
 export const SearchInput = ({ className }: { className: string }) => {
