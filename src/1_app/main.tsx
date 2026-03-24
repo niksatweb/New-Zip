@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client"
 import "./styles/globals.css"
 import { RouterProvider } from "react-router/dom"
 import { Router } from "@/1_app/router"
-import { Topbar } from "@/4_widgets/topbar"
+import { Topbar } from "@/3_widgets/topbar"
 
 const root = document.getElementById("root")
 
