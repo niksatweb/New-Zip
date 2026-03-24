@@ -1,4 +1,4 @@
-import { Container } from "@/7_shared/ui"
+import { Container } from "@/5_shared/ui"
 
 export const Hero = ({ className }: { className?: string }) => {
   return (

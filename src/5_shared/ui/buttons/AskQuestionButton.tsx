@@ -1,4 +1,4 @@
-import { ButtonIcon } from "@/7_shared/ui/buttons"
+import { ButtonIcon } from "@/5_shared/ui/buttons"
 
 export const AskQuestionButton = ({ className }: { className?: string }) => {
   return (
