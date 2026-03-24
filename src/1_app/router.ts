@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router"
-import { Home } from "@/3_pages/home"
+import { Home } from "@/2_pages/home"
 
 export const Router = createBrowserRouter([
   {
