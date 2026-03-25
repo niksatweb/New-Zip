@@ -10,7 +10,7 @@ export const Container = ({
   return (
     <div
       className={
-        "container max-w-354 px-4 flex items-center " + (className ?? "")
+        "container max-w-358 px-4 flex items-center " + (className ?? "")
       }
     >
       {children}
