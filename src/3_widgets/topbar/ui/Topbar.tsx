@@ -26,7 +26,7 @@ export function Topbar({ className }: { className: string }) {
         </div>
       </div>
       <div className="actions flex gap-x-4">
-        <FavoritesButton />
+        <FavoritesButton badge={2} />
         <BasketButton />
       </div>
     </Container>

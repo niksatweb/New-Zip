@@ -1,9 +1,9 @@
 import { ShoppingCartIcon } from "lucide-react"
 import { Button } from "./Button"
 
-export const BasketButton = () => {
+export const BasketButton = ({ badge }: { badge?: number }) => {
   return (
-    <Button>
+    <Button badge={badge}>
       <ShoppingCartIcon />
     </Button>
   )
