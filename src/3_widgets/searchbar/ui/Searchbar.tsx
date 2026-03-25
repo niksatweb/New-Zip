@@ -10,7 +10,7 @@ export const Searchbar = ({
   return (
     <label className={"input " + (className ?? "")}>
       <svg
-        className="h-[1em] opacity-50"
+        className="h-[1.5em]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
@@ -21,8 +21,8 @@ export const Searchbar = ({
           fill="none"
           stroke="currentColor"
         >
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="m21 21-4.3-4.3"></path>
+          <circle cx="9" cy="9" r="7"></circle>
+          <path d="m24 24-8-8"></path>
         </g>
       </svg>
       <Input type="search" placeholder={placeholder}></Input>

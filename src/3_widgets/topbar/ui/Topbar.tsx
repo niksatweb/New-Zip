@@ -16,7 +16,7 @@ export function Topbar({ className }: { className: string }) {
       <Navbar className="hidden md:flex gap-x-4" />
       <Searchbar
         placeholder="Поиск по артикулу или названию компонента..."
-        className="flex-1 mx-8"
+        className="flex-1 mx-8 bg-accent text-black border-none"
       ></Searchbar>
       <div className="flex md:hidden">
         <div className="absolute right-0 top-12 z-10 bg-primary-content w-full px-1">
