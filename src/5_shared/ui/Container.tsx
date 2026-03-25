@@ -10,7 +10,7 @@ export const Container = ({
   return (
     <div
       className={
-        "container max-w-354 px-1 flex justify-between items-center " +
+        "container max-w-354 px-4 flex justify-between items-center " +
         (className ?? "")
       }
     >

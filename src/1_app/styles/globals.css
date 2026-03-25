@@ -9,7 +9,8 @@
   default: true;
   --color-primary: #1b263b;
   --color-primary-content: #f3f4f6;
-  --color-secondary: #1e3a8a;
+  --color-secondary: #f3722c;
+  --color-tertiary: #415a77;
   --color-secondary-content: #f3f4f6;
   --color-accent: var(--color-amber-400);
   --color-base-100: #f3f4f6;
