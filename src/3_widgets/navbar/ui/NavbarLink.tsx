@@ -5,7 +5,7 @@ export const NavbarLink = ({ children, href, className }: NavbarLinkProps) => {
     <li>
       <a
         href={href}
-        className={"hover:text-secondary font-sans text-sm" + (className ?? "")}
+        className={"hover:text-secondary font-sans " + (className ?? "")}
       >
         {children}
       </a>
