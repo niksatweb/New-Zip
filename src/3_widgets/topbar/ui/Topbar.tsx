@@ -13,7 +13,7 @@ export function Topbar({ className }: { className: string }) {
     <Container
       className={"self-end h-12 lg:flex lg:gap-x-10 " + (className ?? "")}
     >
-      <Logo className="uppercase font-bold text-4xl whitespace-nowrap" />
+      <Logo className="uppercase font-bold text-2xl whitespace-nowrap" />
       <div className="items-center md:justify-between gap-x-4 flex">
         <Navbar className="hidden md:flex gap-x-6 " />
         <AskQuestionButton className="bg-accent hover:bg-accent/80 px-4 py-1 rounded-2xl whitespace-nowrap justify-end"></AskQuestionButton>
