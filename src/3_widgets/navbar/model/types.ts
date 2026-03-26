@@ -4,4 +4,5 @@ export interface NavbarLinkProps {
   children: ReactNode
   href: string
   className?: string
+  isActive?: boolean
 }
