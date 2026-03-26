@@ -19,6 +19,6 @@ export interface ProductDetailBackend extends ProductBackend {
   seo: {
     title: string
     description: string
-    keywords: string
+    keywords: string[]
   }
 }
