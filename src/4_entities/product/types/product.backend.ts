@@ -9,6 +9,7 @@ export interface ProductBackend {
 }
 
 export interface ProductDetailBackend extends ProductBackend {
+  id: string
   onStock: boolean
   description: string
   images: string[]
