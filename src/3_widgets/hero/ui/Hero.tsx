@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream:src/3_widgets/hero/ui/Hero.tsx
 import { Container } from "@/5_shared/ui"
+=======
+import { Container } from "@/6_shared/ui"
+>>>>>>> Stashed changes:src/4_widgets/hero/ui/Hero.tsx
 
 export const Hero = ({ className }: { className?: string }) => {
   return (
