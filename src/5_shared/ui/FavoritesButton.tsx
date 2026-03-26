@@ -1,9 +1,15 @@
 import { Heart } from "lucide-react"
 import { Button } from "./Button"
 
-export const FavoritesButton = ({ badge }: { badge?: number }) => {
+export const FavoritesButton = ({
+  badge,
+  className = "",
+}: {
+  badge?: number
+  className?: string
+}) => {
   return (
-    <Button badge={badge}>
+    <Button className={className} badge={badge}>
       <Heart />
     </Button>
   )
