@@ -1,4 +1,5 @@
 export interface ProductBackend {
+  id: string
   condition: "New" | "Used"
   onStock: boolean
   onStockQuantity: number
@@ -11,7 +12,6 @@ export interface ProductBackend {
 }
 
 export interface ProductDetailBackend extends ProductBackend {
-  id: string
   description: string
   images: string[]
   manufacturerId: string
