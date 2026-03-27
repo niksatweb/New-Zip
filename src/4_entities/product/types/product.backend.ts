@@ -9,12 +9,12 @@ export interface ProductBackend {
   name: string
   deliveryTime: number
   price: number
+  productCode: string
 }
 
 export interface ProductDetailBackend extends ProductBackend {
   description: string
   images: string[]
-  manufacturerId: string
   datasheet: string
   seo: {
     title: string
