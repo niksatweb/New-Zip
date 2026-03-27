@@ -10,7 +10,7 @@ export const api = {
         condition: "New",
         onStock: true,
         onStockQuantity: 15,
-        previewImageUrl: "../assets/img/mock/siemens.jpeg",
+        previewImageUrl: "../assets/img/mock/1.jpg",
         previewImageAlt: "Контроллер Siemens S7-1200 PLC",
         brand: "Siemens",
         name: "SIMATIC S7-1200 CPU 1214C",
@@ -23,8 +23,7 @@ export const api = {
         condition: "New",
         onStock: true,
         onStockQuantity: 8,
-        previewImageUrl:
-          "https://images.unsplash.com/photo-1581092335871-5d9e0c2d0a3b",
+        previewImageUrl: "../assets/img/mock/2.jpeg",
         previewImageAlt: "Преобразователь частоты Schneider Altivar",
         brand: "Schneider Electric",
         name: "Altivar 320 VFD - 5.5kW",
@@ -37,8 +36,7 @@ export const api = {
         condition: "Used",
         onStock: true,
         onStockQuantity: 2,
-        previewImageUrl:
-          "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
+        previewImageUrl: "../assets/img/mock/3.jpg",
         previewImageAlt: "Сенсорная панель Siemens HMI",
         brand: "Siemens",
         name: "SIMATIC HMI TP700 Comfort Panel",
@@ -51,8 +49,7 @@ export const api = {
         condition: "New",
         onStock: false,
         onStockQuantity: 0,
-        previewImageUrl:
-          "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa",
+        previewImageUrl: "../assets/img/mock/4.png",
         previewImageAlt: "Индуктивный датчик приближения",
         brand: "SICK",
         name: "Индуктивный датчик приближения IME series",
@@ -65,8 +62,7 @@ export const api = {
         condition: "New",
         onStock: true,
         onStockQuantity: 25,
-        previewImageUrl:
-          "https://images.unsplash.com/photo-1581092335871-5d9e0c2d0a3b",
+        previewImageUrl: "../assets/img/mock/5.webp",
         previewImageAlt: "Электродвигатель ABB",
         brand: "ABB",
         name: "Электродвигатель IE3 - 7.5kW",
@@ -79,8 +75,7 @@ export const api = {
         condition: "Used",
         onStock: true,
         onStockQuantity: 1,
-        previewImageUrl:
-          "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
+        previewImageUrl: "../assets/img/mock/6.jpg",
         previewImageAlt: "Контроллер Allen Bradley PLC",
         brand: "Rockwell Automation",
         name: "ControlLogix 5570 Controller",
@@ -93,8 +88,7 @@ export const api = {
         condition: "New",
         onStock: true,
         onStockQuantity: 12,
-        previewImageUrl:
-          "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa",
+        previewImageUrl: "../assets/img/mock/6.jpeg",
         previewImageAlt: "Блок питания Siemens",
         brand: "Siemens",
         name: "SITOP PSU100S 20A Блок питания",
@@ -107,8 +101,7 @@ export const api = {
         condition: "New",
         onStock: false,
         onStockQuantity: 0,
-        previewImageUrl:
-          "https://images.unsplash.com/photo-1581092335871-5d9e0c2d0a3b",
+        previewImageUrl: "../assets/img/mock/8.jpeg",
         previewImageAlt: "Промышленный робот Fanuc",
         brand: "Fanuc",
         name: "LR Mate 200iD Промышленный робот",
@@ -121,8 +114,7 @@ export const api = {
         condition: "Used",
         onStock: true,
         onStockQuantity: 3,
-        previewImageUrl:
-          "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
+        previewImageUrl: "../assets/img/mock/9.webp",
         previewImageAlt: "Промышленный коммутатор Cisco",
         brand: "Cisco",
         name: "IE-2000 Промышленный коммутатор",
@@ -135,8 +127,7 @@ export const api = {
         condition: "New",
         onStock: true,
         onStockQuantity: 6,
-        previewImageUrl:
-          "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa",
+        previewImageUrl: "../assets/img/mock/10.webp",
         previewImageAlt: "SCADA система Siemens",
         brand: "Siemens",
         name: "SIMATIC WinCC SCADA v8.0",
