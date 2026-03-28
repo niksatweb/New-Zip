@@ -11,8 +11,10 @@ export function Topbar({ className }: { className: string }) {
   const handleClick = () => setMobMenuOpen(!mobMenuIsOpen)
 
   return (
-    <Container className={"h-16 lg:flex gap-x-8 " + (className ?? "")}>
-      <Logo className="uppercase font-bold text-3xl whitespace-nowrap" />
+    <Container
+      className={"flex items-center h-16 lg:flex gap-x-8 " + (className ?? "")}
+    >
+      <Logo className="text-3xl" />
       <Navbar className="hidden md:flex gap-x-4" />
       <Searchbar
         placeholder="Поиск по артикулу или названию компонента..."
