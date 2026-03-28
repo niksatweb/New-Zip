@@ -1,14 +1,19 @@
+import { NavLink } from "react-router"
 import type { NavbarLinkProps } from "../model/types"
 
-export const NavbarLink = ({ children, href, className }: NavbarLinkProps) => {
+export const NavbarLink = ({ children, to, className }: NavbarLinkProps) => {
   return (
     <li>
-      <a
-        href={href}
-        className={"hover:text-secondary font-sans " + (className ?? "")}
+      <NavLink
+        to={to}
+        className={({ isActive }) => {
+          return isActive
+            ? "border-b-3 border-b-secondary text-secondary hover:text-secondary font-sans "
+            : "hover:text-secondary font-sans "
+        }}
       >
         {children}
-      </a>
+      </NavLink>
     </li>
   )
 }

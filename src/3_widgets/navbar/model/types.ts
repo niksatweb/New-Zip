@@ -2,7 +2,7 @@ import type { ReactNode } from "react"
 
 export interface NavbarLinkProps {
   children: ReactNode
-  href: string
+  to: string
   className?: string
   isActive?: boolean
 }

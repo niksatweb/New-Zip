@@ -3,15 +3,12 @@ import { NavbarLink } from "./NavbarLink"
 export const Navbar = ({ className }: { className?: string }) => {
   return (
     <ul className={className}>
-      <NavbarLink
-        className="border-b-3 border-b-secondary text-secondary"
-        href="#"
-      >
+      <NavbarLink className="" to="/">
         Главная
       </NavbarLink>
-      <NavbarLink href="#">О компании</NavbarLink>
-      <NavbarLink href="#">Доставка</NavbarLink>
-      <NavbarLink href="#">Контакты</NavbarLink>
+      <NavbarLink to="about">О компании</NavbarLink>
+      <NavbarLink to="shipping">Доставка</NavbarLink>
+      <NavbarLink to="contacts">Контакты</NavbarLink>
     </ul>
   )
 }
