@@ -3,7 +3,7 @@ import { FooterNavLink } from "./FooterNavLink"
 
 export const FooterNav = () => {
   return (
-    <div className="flex gap-x-20 h-full">
+    <div className="flex gap-x-12 h-full">
       <div className="flex flex-col justify-between">
         <FooterHeader>Компания</FooterHeader>
         <ul className="flex flex-col gap-y-2">
