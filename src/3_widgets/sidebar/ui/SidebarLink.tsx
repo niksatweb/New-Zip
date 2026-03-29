@@ -13,10 +13,11 @@ export const SidebarLink = ({
   return (
     <NavLink
       to={to}
-      className={
-        "hover:bg-primary/10 block py-3 transition-all ease-in duration-300 " +
-        className
-      }
+      className={({ isActive }) => {
+        return isActive
+          ? "bg-primary block pl-1 py-3 text-primary-content"
+          : "hover:bg-primary/10 block pl-1 py-3 transition-all ease-in duration-300"
+      }}
     >
       {children}
     </NavLink>
