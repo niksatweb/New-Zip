@@ -15,7 +15,7 @@ export const SidebarLink = ({
       to={to}
       className={({ isActive }) => {
         return isActive
-          ? "bg-primary block pl-1 py-3 text-primary-content"
+          ? "bg-primary block pl-1 py-3 text-primary-content rounded-r-lg"
           : "hover:bg-primary/10 block pl-1 py-3 transition-all ease-in duration-300"
       }}
     >
