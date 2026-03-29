@@ -1,5 +1,5 @@
 export const FooterHeader = ({ children }: { children: string }) => {
   return (
-    <h2 className="uppercase text-xs font-bold tracking-wider">{children}</h2>
+    <h3 className="uppercase text-xs font-bold tracking-wider">{children}</h3>
   )
 }
