@@ -1,4 +1,5 @@
 import { SidebarLink } from "./SidebarLink"
+<<<<<<< HEAD
 import { Link, useSearchParams } from "react-router"
 
 export const Sidebar = ({ className = "" }: { className?: string }) => {
@@ -21,6 +22,14 @@ export const Sidebar = ({ className = "" }: { className?: string }) => {
     return activeCategory === value
   }
 
+=======
+import {useSearchParams} from "react-router"
+
+export const Sidebar = ({ className = "" }: { className?: string }) => {
+  const [params] = useSearchParams()
+  const activeCategory = params.get("category")
+  console.log(activeCategory)
+>>>>>>> e720bcbe10cdd942de173225514bee7f6fbcc8b4
   return (
     <aside className={className}>
       <div className="py-6">
@@ -31,6 +40,7 @@ export const Sidebar = ({ className = "" }: { className?: string }) => {
           Промышленная автоматизация
         </p>
       </div>
+<<<<<<< HEAD
       {categories.map((c) => (
         <ul
           className={
@@ -55,6 +65,33 @@ export const Sidebar = ({ className = "" }: { className?: string }) => {
           >
             Все бренды
           </Link>
+=======
+      <ul className="flex flex-col gap-y-1">
+        <li className="">
+          <SidebarLink to="/?category=festo">
+            <span>Festo</span>
+          </SidebarLink>
+        </li>
+        <li>
+          <SidebarLink to="/?category=schneider">
+            <span>Schneider</span>
+          </SidebarLink>
+        </li>
+        <li>
+          <SidebarLink to="/?category=smc">
+            <span>SMC</span>
+          </SidebarLink>
+        </li>
+        <li>
+          <SidebarLink to="/?category=siemens">
+            <span>Siemens</span>
+          </SidebarLink>
+        </li>
+        <li>
+          <SidebarLink to="/?category=allen-bradley">
+            <span>Allen-Bradley</span>
+          </SidebarLink>
+>>>>>>> e720bcbe10cdd942de173225514bee7f6fbcc8b4
         </li>
       </ul>
     </aside>
