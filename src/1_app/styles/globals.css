@@ -18,8 +18,8 @@
 }
 
 @font-face {
-  font-family: Manrope;
-  src: url("../../5_shared/assets/fonts/Manrope-VariableFont_wght.ttf")
+  font-family: Inter;
+  src: url("../../5_shared/assets/fonts/Inter-VariableFont_opsz\,wght.ttf")
     format("truetype");
 }
 
@@ -31,5 +31,5 @@
 #root {
   display: flex;
   flex-direction: column;
-  font-family: Manrope;
+  font-family: Inter;
 }
