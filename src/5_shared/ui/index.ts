@@ -1,3 +1,4 @@
+export { PageSubtitle } from "./PageSubtitle"
 export { BasketButton } from "./BasketButton"
 export { Button } from "./Button"
 export { FavoritesButton } from "./FavoritesButton"
