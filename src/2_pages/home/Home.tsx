@@ -1,7 +1,22 @@
 import { Container, PageTitle, PageSubtitle } from "@/5_shared/ui"
 import { Sidebar } from "@/3_widgets/sidebar/"
+import { ProductGrid, ProductCard } from "@/4_entities/product"
+import { api } from "@/5_shared/api"
+import { useEffect, useState } from "react"
+import type { ProductBackend } from "@/4_entities/product/types/product.backend"
 
 export function Home() {
+  const [products, setProducts] = useState<ProductBackend[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    setIsLoading(true)
+    api.getProductList().then((data) => {
+      setProducts(data)
+      setIsLoading(false)
+    })
+  }, [])
+
   return (
     <Container className="mx-auto flex justify-center items-center flex-col">
       <main className="flex gap-x-16 justify-between w-full">
@@ -12,7 +27,17 @@ export function Home() {
             Прямые поставки от ведущих мировых производителей. Официальная
             гарантия и техническая поддержка.
           </PageSubtitle>
-          <p>section part</p>
+          <ProductGrid className="pt-6">
+            {isLoading ? (
+              <p className="whitespace-nowrap">
+                Идёт загрузка каталога товаров...
+              </p>
+            ) : (
+              products.map((product) => (
+                <ProductCard product={product}></ProductCard>
+              ))
+            )}
+          </ProductGrid>
         </section>
       </main>
     </Container>
