@@ -8,7 +8,7 @@ export const ProductImage = ({
   className: string
 }) => {
   return (
-    <div className={className}>
+    <div className="h-60">
       <img
         className={className}
         src={"src/" + product.previewImageUrl}
