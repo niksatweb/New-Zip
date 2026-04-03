@@ -1,5 +1,4 @@
 import type { ReactNode } from "react"
-import { ProductCard } from "./productCard/ProductCard"
 
 export const ProductGrid = ({
   children,
