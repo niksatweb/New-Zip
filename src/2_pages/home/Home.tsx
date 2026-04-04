@@ -1,6 +1,10 @@
 import { Container, PageTitle, PageSubtitle } from "@/5_shared/ui"
 import { Sidebar } from "@/3_widgets/sidebar/"
-import { ProductGrid, ProductCard } from "@/4_entities/product"
+import {
+  ProductGrid,
+  ProductCard,
+  ProductGridSkeleton,
+} from "@/4_entities/product"
 import { api } from "@/5_shared/api"
 import { useEffect, useState } from "react"
 import type { ProductBackend } from "@/4_entities/product/types/product.backend"
@@ -29,9 +33,7 @@ export function Home() {
           </PageSubtitle>
           <ProductGrid className="pt-6">
             {isLoading ? (
-              <p className="whitespace-nowrap">
-                Идёт загрузка каталога товаров...
-              </p>
+              <ProductGridSkeleton />
             ) : (
               products.map((product) => (
                 <ProductCard product={product}></ProductCard>
