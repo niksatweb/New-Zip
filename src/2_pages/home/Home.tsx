@@ -18,9 +18,9 @@ export function Home() {
   }, [])
 
   return (
-    <Container className="mx-auto flex justify-center items-center flex-col">
-      <main className="flex gap-x-16 justify-between w-full">
-        <Sidebar className="px-6 w-64 pl-0"></Sidebar>
+    <Container className="mx-auto flex">
+      <main className="flex gap-x-16 justify-between w-full h-full">
+        <Sidebar className="px-6 w-64 pl-0 sticky top-16 h-full overflow-y-auto"></Sidebar>
         <section className="flex-1 py-6">
           <PageTitle>Промышленное оборудование</PageTitle>
           <PageSubtitle>

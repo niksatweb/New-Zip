@@ -35,7 +35,7 @@ export const ProductCard = ({
       <ProductDeliveryTime deliveryTime={product.deliveryTime} />
       <div className="flex justify-between">
         <ProductPrice price={product.price} />
-        <BasketButton className="py-3 px-2 rounded-lg bg-primary text-primary-content" />
+        <BasketButton className="cursor-pointer py-3 px-2 rounded-lg bg-primary text-primary-content" />
       </div>
     </div>
   )

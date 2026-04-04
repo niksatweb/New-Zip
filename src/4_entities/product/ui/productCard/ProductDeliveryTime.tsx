@@ -9,7 +9,7 @@ export const ProductDeliveryTime = ({
 }) => {
   return (
     <div className={"flex items-center gap-x-2 mb-2" + className}>
-      <Truck className="text-secondary size-5" />
+      <Truck className="text-secondary size-4" />
       <p className="text-xs text-on-surface-variant">
         Срок поставки: {deliveryTime + " нед."}
       </p>
