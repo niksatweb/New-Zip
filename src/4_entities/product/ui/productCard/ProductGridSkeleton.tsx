@@ -7,19 +7,9 @@ export const ProductGridSkeleton = ({
 }) => {
   return (
     <>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
-      <ProductCardSkeleton></ProductCardSkeleton>
+      {Array.from({ length: 12 }).map((i) => (
+        <ProductCardSkeleton></ProductCardSkeleton>
+      ))}
     </>
   )
 }
