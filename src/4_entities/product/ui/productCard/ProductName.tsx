@@ -8,7 +8,7 @@ export const ProductName = ({
   return (
     <p
       className={
-        "font-bold text-primary mb-3 leading-tight min-h-10 " + className
+        "font-bold text-primary mb-1 leading-tight min-h-15 " + className
       }
     >
       {name}

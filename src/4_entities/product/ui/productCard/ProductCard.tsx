@@ -16,11 +16,7 @@ export const ProductCard = ({
   product: ProductBackend
 }) => {
   return (
-    <div
-      className={
-        "relative group items-center justify-center " + className
-      }
-    >
+    <div className={"relative group items-center justify-center " + className}>
       <ProductCondition
         condition={product.condition}
         className="absolute left-0 top-0 z-99"
