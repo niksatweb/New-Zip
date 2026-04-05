@@ -5,7 +5,7 @@ import {
   ProductCard,
   ProductGridSkeleton,
 } from "@/4_entities/product"
-import { api } from "@/4_entities/product/api"
+import { api } from "@/4_entities/product/api/product.api"
 import { useEffect, useState } from "react"
 import type { ProductBackend } from "@/4_entities/product/types/product.backend"
 

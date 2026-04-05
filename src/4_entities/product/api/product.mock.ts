@@ -1,7 +1,7 @@
 import type { ProductBackend } from "@/4_entities/product/types/product.backend"
 import type { ProductDetailBackend } from "@/4_entities/product/types/product.backend"
 
-const productsList: ProductBackend[] = [
+export const productsList: ProductBackend[] = [
   {
     id: "PLC_001",
     condition: "New",
@@ -264,7 +264,7 @@ const productsList: ProductBackend[] = [
   },
 ]
 
-const ProductsDetailList: ProductDetailBackend[] = [
+export const ProductsDetailList: ProductDetailBackend[] = [
   {
     id: "PLC_001",
     condition: "New",
@@ -603,14 +603,3 @@ const ProductsDetailList: ProductDetailBackend[] = [
     },
   },
 ]
-
-export const api = {
-  async getProductList(): Promise<ProductBackend[]> {
-    await new Promise((res) => setTimeout(res, 1000))
-    return productsList
-  },
-  async getProductDetail(id: string): Promise<ProductDetailBackend | null> {
-    await new Promise((res) => setTimeout(res, 1000))
-    return ProductsDetailList.find((product) => product.id === id) || null
-  },
-}
