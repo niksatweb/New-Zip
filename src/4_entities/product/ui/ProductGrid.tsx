@@ -1,14 +1,14 @@
 import type { ReactNode } from "react"
 
-export const Container = ({
+export const ProductGrid = ({
   children,
-  className,
+  className = "",
 }: {
   children: ReactNode
   className?: string
 }) => {
   return (
-    <div className={"container max-w-358 px-4 " + (className ?? "")}>
+    <div className={"grid lg:grid-cols-4 gap-x-6 gap-y-12 " + className}>
       {children}
     </div>
   )

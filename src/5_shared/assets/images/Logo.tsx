@@ -1,13 +1,21 @@
+import { Link } from "react-router"
+
+
 export const Logo = ({
-  className,
-  href = "#",
+  className = "",
+  to = "/",
 }: {
-  className: string
-  href?: string
+  className?: string
+  to?: string
 }) => {
   return (
-    <a href={href} className="flex items-center  gap-x-1">
-      <span className={`${className} leading-none`}>New-Zip</span>
-    </a>
+    <Link to={to}
+      className={
+        "flex items-center gap-x-1 uppercase font-bold whitespace-nowrap " +
+        className
+      }
+    >
+      <span className="leading-none">New-Zip</span>
+    </Link>
   )
 }
