@@ -7,8 +7,8 @@ export const ProductGridSkeleton = ({
 }) => {
   return (
     <>
-      {Array.from({ length: 12 }).map((i) => (
-        <ProductCardSkeleton></ProductCardSkeleton>
+      {Array.from({ length: 12 }).map((i, n) => (
+        <ProductCardSkeleton key={n}></ProductCardSkeleton>
       ))}
     </>
   )
