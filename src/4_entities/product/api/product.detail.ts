@@ -7,7 +7,7 @@ export function useProductDetailQuery(id?: string) {
     enabled: !id,
 
     // for future
-    // placeholderData: (previouseData, previouseQuery) => {
+    // placeholderData: (previousData, previousQuery) => {
     //   return previousData
     // },
   })
