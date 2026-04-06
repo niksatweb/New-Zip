@@ -31,22 +31,23 @@ export const Sidebar = ({ className = "" }: { className?: string }) => {
           Промышленная автоматизация
         </p>
       </div>
-      {categories.map((c) => (
-        <ul
-          className={
-            "flex flex-col gap-y-1 border-b border-primary/10 mb-2 " +
-            (isActiveCategory(c.value)
-              ? "bg-primary text-primary-content rounded-r-lg"
-              : "")
-          }
-        >
+      <ul className={"flex flex-col gap-y-1 border-b border-primary/10 mb-2"}>
+        {categories.map((c, n) => (
           <li className="">
-            <SidebarLink to={createLink(c.value)}>
+            <SidebarLink
+              key={n}
+              className={
+                isActiveCategory(c.value)
+                  ? "bg-primary text-primary-content rounded-r-lg "
+                  : ""
+              }
+              to={createLink(c.value)}
+            >
               <span>{c.label}</span>
             </SidebarLink>
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
       <ul>
         <li>
           <Link
