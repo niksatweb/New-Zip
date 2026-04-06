@@ -24,8 +24,8 @@ export function Home() {
             {isLoading ? (
               <ProductGridSkeleton />
             ) : (
-              productList.map((product) => (
-                <ProductCard product={product}></ProductCard>
+              productList.map((product, n) => (
+                <ProductCard key={n} product={product}></ProductCard>
               ))
             )}
           </ProductGrid>
