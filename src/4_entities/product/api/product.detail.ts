@@ -8,7 +8,7 @@ export function useProductDetailQuery(id?: string) {
 
     // for future
     // placeholderData: (previouseData, previouseQuery) => {
-    //   return previouseData
+    //   return previousData
     // },
   })
 
