@@ -1,6 +1,50 @@
 import type { ProductBackend } from "@/4_entities/product/types/product.backend"
 import type { ProductDetailBackend } from "@/4_entities/product/types/product.backend"
 
+const DELAY = 1000
+const delay = () => new Promise((res) => setTimeout(res, DELAY))
+
+// for compatibility with axios
+export const productMock = {
+  getList: async <T>(url: string, ..._: any) => {
+    await delay()
+    return { data: productsList as T }
+  },
+
+  getDetail: async <T>(url: string, ..._: any) => {
+    await delay()
+    const id = url.split("/").at(-1)
+
+    const productDetail = ProductsDetailList.find((product) => product.id == id)
+
+    if (productDetail) {
+      return { data: productDetail as T }
+    }
+
+    throw new Error(`Wrong id`)
+  },
+
+  // for example
+  post: async <T>(..._: any) => {
+    await delay()
+    return {} as T
+  },
+
+  put: async <T>(..._: any) => {
+    return {} as T
+  },
+
+  patch: async <T>(..._: any) => {
+    await delay()
+    return {} as T
+  },
+
+  delete: async <T>(..._: any) => {
+    await delay()
+    return {} as T
+  },
+}
+
 export const productsList: ProductBackend[] = [
   {
     id: "PLC_001",
