@@ -1,16 +1,60 @@
 import type { ProductBackend } from "@/4_entities/product/types/product.backend"
 import type { ProductDetailBackend } from "@/4_entities/product/types/product.backend"
 
-const productsList: ProductBackend[] = [
+const DELAY = 1000
+const delay = () => new Promise((res) => setTimeout(res, DELAY))
+
+// for compatibility with axios
+export const productMock = {
+  getList: async <T>(url: string, ..._: any) => {
+    await delay()
+    return { data: productsList as T }
+  },
+
+  getDetail: async <T>(url: string, ..._: any) => {
+    await delay()
+    const id = url.split("/").at(-1)
+
+    const productDetail = ProductsDetailList.find((product) => product.id == id)
+
+    if (productDetail) {
+      return { data: productDetail as T }
+    }
+
+    throw new Error(`Wrong id`)
+  },
+
+  // for example
+  post: async <T>(..._: any) => {
+    await delay()
+    return {} as T
+  },
+
+  put: async <T>(..._: any) => {
+    return {} as T
+  },
+
+  patch: async <T>(..._: any) => {
+    await delay()
+    return {} as T
+  },
+
+  delete: async <T>(..._: any) => {
+    await delay()
+    return {} as T
+  },
+}
+
+export const productsList: ProductBackend[] = [
   {
     id: "PLC_001",
     condition: "New",
     onStock: true,
     onStockQuantity: 15,
-    previewImageUrl: "/assets/img/mock/1.jpg",
+    previewImageUrl: "/5_shared/assets/mock/1.jpg",
     previewImageAlt: "Контроллер Siemens S7-1200 PLC",
     brand: "Siemens",
-    name: "SIMATIC S7-1200 CPU 1214C",
+    name: "SIMATIC S7-1200 CPU 1214C 6ES7214-1AG40-0XB0",
     deliveryTime: 3,
     price: 485.5,
     productCode: "6ES7214-1AG40-0XB0",
@@ -20,10 +64,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: true,
     onStockQuantity: 8,
-    previewImageUrl: "/assets/img/mock/2.jpeg",
+    previewImageUrl: "5_shared/assets/mock/2.jpeg",
     previewImageAlt: "Преобразователь частоты Schneider Altivar",
     brand: "Schneider Electric",
-    name: "Altivar 320 VFD - 5.5kW",
+    name: "Altivar 320 VFD - 5.5kW ATV320U55N4B",
     deliveryTime: 5,
     price: 1250.0,
     productCode: "ATV320U55N4B",
@@ -33,10 +77,10 @@ const productsList: ProductBackend[] = [
     condition: "Used",
     onStock: true,
     onStockQuantity: 2,
-    previewImageUrl: "/assets/img/mock/3.jpg",
+    previewImageUrl: "5_shared/assets/mock/3.jpg",
     previewImageAlt: "Сенсорная панель Siemens HMI",
     brand: "Siemens",
-    name: "SIMATIC HMI TP700 Comfort Panel",
+    name: "SIMATIC HMI TP700 Comfort Panel 6AV2124-0GC13-0AX0",
     deliveryTime: 4,
     price: 1890.75,
     productCode: "6AV2124-0GC13-0AX0",
@@ -46,10 +90,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: false,
     onStockQuantity: 0,
-    previewImageUrl: "/assets/img/mock/4.png",
+    previewImageUrl: "5_shared/assets/mock/4.png",
     previewImageAlt: "Индуктивный датчик приближения",
     brand: "SICK",
-    name: "Индуктивный датчик приближения IME series",
+    name: "Индуктивный датчик приближения IME series IME12-04NPSZW2S",
     deliveryTime: 7,
     price: 89.95,
     productCode: "IME12-04NPSZW2S",
@@ -59,10 +103,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: true,
     onStockQuantity: 25,
-    previewImageUrl: "/assets/img/mock/5.webp",
+    previewImageUrl: "5_shared/assets/mock/5.webp",
     previewImageAlt: "Электродвигатель ABB",
     brand: "ABB",
-    name: "Электродвигатель IE3 - 7.5kW",
+    name: "Электродвигатель IE3 - 7.5kW M3BP160MLC4",
     deliveryTime: 10,
     price: 875.3,
     productCode: "M3BP160MLC4",
@@ -72,10 +116,10 @@ const productsList: ProductBackend[] = [
     condition: "Used",
     onStock: true,
     onStockQuantity: 1,
-    previewImageUrl: "/assets/img/mock/6.jpg",
+    previewImageUrl: "5_shared/assets/mock/6.jpg",
     previewImageAlt: "Контроллер Allen Bradley PLC",
     brand: "Rockwell Automation",
-    name: "ControlLogix 5570 Controller",
+    name: "ControlLogix 5570 Controller 1756-L71",
     deliveryTime: 5,
     price: 3250.0,
     productCode: "1756-L71",
@@ -85,10 +129,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: true,
     onStockQuantity: 12,
-    previewImageUrl: "/assets/img/mock/6.jpg",
+    previewImageUrl: "5_shared/assets/mock/6.jpg",
     previewImageAlt: "Блок питания Siemens",
     brand: "Siemens",
-    name: "SITOP PSU100S 20A Блок питания",
+    name: "SITOP PSU100S 20A Блок питания 6EP1336-3BA10",
     deliveryTime: 2,
     price: 245.8,
     productCode: "6EP1336-3BA10",
@@ -98,10 +142,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: false,
     onStockQuantity: 0,
-    previewImageUrl: "/assets/img/mock/8.jpeg",
+    previewImageUrl: "5_shared/assets/mock/8.jpeg",
     previewImageAlt: "Промышленный робот Fanuc",
     brand: "Fanuc",
-    name: "LR Mate 200iD Промышленный робот",
+    name: "LR Mate 200iD Промышленный робот LR-200ID-7C",
     deliveryTime: 30,
     price: 28500.0,
     productCode: "LR-200ID-7C",
@@ -111,10 +155,10 @@ const productsList: ProductBackend[] = [
     condition: "Used",
     onStock: true,
     onStockQuantity: 3,
-    previewImageUrl: "/assets/img/mock/9.webp",
+    previewImageUrl: "5_shared/assets/mock/9.webp",
     previewImageAlt: "Промышленный коммутатор Cisco",
     brand: "Cisco",
-    name: "IE-2000 Промышленный коммутатор",
+    name: "IE-2000 Промышленный коммутатор IE-2000-8TC",
     deliveryTime: 3,
     price: 1875.4,
     productCode: "IE-2000-8TC",
@@ -124,10 +168,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: true,
     onStockQuantity: 6,
-    previewImageUrl: "/assets/img/mock/10.webp",
+    previewImageUrl: "5_shared/assets/mock/10.webp",
     previewImageAlt: "SCADA система Siemens",
     brand: "Siemens",
-    name: "SIMATIC WinCC SCADA v8.0",
+    name: "SIMATIC WinCC SCADA v8.0 6AV6381-2BH07-0AV0",
     deliveryTime: 1,
     price: 4560.0,
     productCode: "6AV6381-2BH07-0AV0",
@@ -137,10 +181,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: true,
     onStockQuantity: 15,
-    previewImageUrl: "/assets/img/mock/1.jpg",
+    previewImageUrl: "/5_shared/assets/mock/1.jpg",
     previewImageAlt: "Контроллер Siemens S7-1200 PLC",
     brand: "Siemens",
-    name: "SIMATIC S7-1200 CPU 1214C",
+    name: "SIMATIC S7-1200 CPU 1214C 6ES7214-1AG40-0XB0",
     deliveryTime: 3,
     price: 485.5,
     productCode: "6ES7214-1AG40-0XB0",
@@ -150,10 +194,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: true,
     onStockQuantity: 8,
-    previewImageUrl: "/assets/img/mock/2.jpeg",
+    previewImageUrl: "5_shared/assets/mock/2.jpeg",
     previewImageAlt: "Преобразователь частоты Schneider Altivar",
     brand: "Schneider Electric",
-    name: "Altivar 320 VFD - 5.5kW",
+    name: "Altivar 320 VFD - 5.5kW ATV320U55N4B",
     deliveryTime: 5,
     price: 1250.0,
     productCode: "ATV320U55N4B",
@@ -163,10 +207,10 @@ const productsList: ProductBackend[] = [
     condition: "Used",
     onStock: true,
     onStockQuantity: 2,
-    previewImageUrl: "/assets/img/mock/3.jpg",
+    previewImageUrl: "5_shared/assets/mock/3.jpg",
     previewImageAlt: "Сенсорная панель Siemens HMI",
     brand: "Siemens",
-    name: "SIMATIC HMI TP700 Comfort Panel",
+    name: "SIMATIC HMI TP700 Comfort Panel 6AV2124-0GC13-0AX0",
     deliveryTime: 4,
     price: 1890.75,
     productCode: "6AV2124-0GC13-0AX0",
@@ -176,10 +220,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: false,
     onStockQuantity: 0,
-    previewImageUrl: "/assets/img/mock/4.png",
+    previewImageUrl: "5_shared/assets/mock/4.png",
     previewImageAlt: "Индуктивный датчик приближения",
     brand: "SICK",
-    name: "Индуктивный датчик приближения IME series",
+    name: "Индуктивный датчик приближения IME series IME12-04NPSZW2S",
     deliveryTime: 7,
     price: 89.95,
     productCode: "IME12-04NPSZW2S",
@@ -189,10 +233,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: true,
     onStockQuantity: 25,
-    previewImageUrl: "/assets/img/mock/5.webp",
+    previewImageUrl: "5_shared/assets/mock/5.webp",
     previewImageAlt: "Электродвигатель ABB",
     brand: "ABB",
-    name: "Электродвигатель IE3 - 7.5kW",
+    name: "Электродвигатель IE3 - 7.5kW M3BP160MLC4",
     deliveryTime: 10,
     price: 875.3,
     productCode: "M3BP160MLC4",
@@ -202,10 +246,10 @@ const productsList: ProductBackend[] = [
     condition: "Used",
     onStock: true,
     onStockQuantity: 1,
-    previewImageUrl: "/assets/img/mock/6.jpg",
+    previewImageUrl: "5_shared/assets/mock/6.jpg",
     previewImageAlt: "Контроллер Allen Bradley PLC",
     brand: "Rockwell Automation",
-    name: "ControlLogix 5570 Controller",
+    name: "ControlLogix 5570 Controller 1756-L71",
     deliveryTime: 5,
     price: 3250.0,
     productCode: "1756-L71",
@@ -215,10 +259,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: true,
     onStockQuantity: 12,
-    previewImageUrl: "/assets/img/mock/6.jpg",
+    previewImageUrl: "5_shared/assets/mock/6.jpg",
     previewImageAlt: "Блок питания Siemens",
     brand: "Siemens",
-    name: "SITOP PSU100S 20A Блок питания",
+    name: "SITOP PSU100S 20A Блок питания 6EP1336-3BA10",
     deliveryTime: 2,
     price: 245.8,
     productCode: "6EP1336-3BA10",
@@ -228,10 +272,10 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: false,
     onStockQuantity: 0,
-    previewImageUrl: "/assets/img/mock/8.jpeg",
+    previewImageUrl: "5_shared/assets/mock/8.jpeg",
     previewImageAlt: "Промышленный робот Fanuc",
     brand: "Fanuc",
-    name: "LR Mate 200iD Промышленный робот",
+    name: "LR Mate 200iD Промышленный робот LR-200ID-7C",
     deliveryTime: 30,
     price: 28500.0,
     productCode: "LR-200ID-7C",
@@ -241,10 +285,10 @@ const productsList: ProductBackend[] = [
     condition: "Used",
     onStock: true,
     onStockQuantity: 3,
-    previewImageUrl: "/assets/img/mock/9.webp",
+    previewImageUrl: "5_shared/assets/mock/9.webp",
     previewImageAlt: "Промышленный коммутатор Cisco",
     brand: "Cisco",
-    name: "IE-2000 Промышленный коммутатор",
+    name: "IE-2000 Промышленный коммутатор IE-2000-8TC",
     deliveryTime: 3,
     price: 1875.4,
     productCode: "IE-2000-8TC",
@@ -254,17 +298,17 @@ const productsList: ProductBackend[] = [
     condition: "New",
     onStock: true,
     onStockQuantity: 6,
-    previewImageUrl: "/assets/img/mock/10.webp",
+    previewImageUrl: "5_shared/assets/mock/10.webp",
     previewImageAlt: "SCADA система Siemens",
     brand: "Siemens",
-    name: "SIMATIC WinCC SCADA v8.0",
+    name: "SIMATIC WinCC SCADA v8.0 6AV6381-2BH07-0AV0",
     deliveryTime: 1,
     price: 4560.0,
     productCode: "6AV6381-2BH07-0AV0",
   },
 ]
 
-const ProductsDetailList: ProductDetailBackend[] = [
+export const ProductsDetailList: ProductDetailBackend[] = [
   {
     id: "PLC_001",
     condition: "New",
@@ -603,14 +647,3 @@ const ProductsDetailList: ProductDetailBackend[] = [
     },
   },
 ]
-
-export const api = {
-  async getProductList(): Promise<ProductBackend[]> {
-    await new Promise((res) => setTimeout(res, 1000))
-    return productsList
-  },
-  async getProductDetail(id: string): Promise<ProductDetailBackend | null> {
-    await new Promise((res) => setTimeout(res, 1000))
-    return ProductsDetailList.find((product) => product.id === id) || null
-  },
-}

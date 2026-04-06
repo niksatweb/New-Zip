@@ -5,21 +5,10 @@ import {
   ProductCard,
   ProductGridSkeleton,
 } from "@/4_entities/product"
-import { api } from "@/5_shared/api"
-import { useEffect, useState } from "react"
-import type { ProductBackend } from "@/4_entities/product/types/product.backend"
+import { useProductListQuery } from "@/4_entities/product"
 
 export function Home() {
-  const [products, setProducts] = useState<ProductBackend[]>([])
-  const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {
-    setIsLoading(true)
-    api.getProductList().then((data) => {
-      setProducts(data)
-      setIsLoading(false)
-    })
-  }, [])
+  const { productList, isLoading } = useProductListQuery()
 
   return (
     <Container className="mx-auto flex">
@@ -35,7 +24,7 @@ export function Home() {
             {isLoading ? (
               <ProductGridSkeleton />
             ) : (
-              products.map((product) => (
+              productList.map((product) => (
                 <ProductCard product={product}></ProductCard>
               ))
             )}
