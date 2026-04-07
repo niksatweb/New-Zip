@@ -1,4 +1,4 @@
-import type { ProductBackend } from "@/4_entities/product/types/product.backend"
+import type { ProductBackend } from "../../types/product.backend"
 
 export const ProductImage = ({
   product,
