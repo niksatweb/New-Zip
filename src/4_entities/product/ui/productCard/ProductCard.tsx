@@ -16,18 +16,23 @@ export const ProductCard = ({
   product: ProductBackend
 }) => {
   return (
-    <div className={"relative group items-center justify-center " + className}>
+    <div
+      className={
+        "relative group items-center justify-center cursor-pointer group " +
+        className
+      }
+    >
       <ProductCondition
         condition={product.condition}
         className="absolute left-0 top-0 z-99"
       ></ProductCondition>
       <FavoritesButton className="absolute right-0 top-0 z-100" />
       <ProductImage
-        className="w-full h-full scale-95 group-hover:scale-100 duration-700 transition-all object-contain cursor-pointer "
+        className="w-full h-full scale-95 group-hover:scale-100 duration-700 transition-all object-contain "
         product={product}
       />
       <ProductBrand brand={product.brand} />
-      <ProductName name={product.name} />
+      <ProductName className="group-hover:underline" name={product.name} />
       <ProductDeliveryTime deliveryTime={product.deliveryTime} />
       <div className="flex justify-between">
         <ProductPrice price={product.price} />
