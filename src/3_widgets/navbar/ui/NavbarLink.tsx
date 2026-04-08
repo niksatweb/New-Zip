@@ -8,7 +8,7 @@ export const NavbarLink = ({ children, to, className }: NavbarLinkProps) => {
         to={to}
         className={({ isActive }) => {
           return isActive
-            ? "border-b-2 border-b-secondary text-secondary hover:text-secondary font-bold text-sm pb-1 "
+            ? "border-b-2 border-b-secondary text-secondary font-bold text-sm pb-1 "
             : "hover:text-secondary font-bold text-sm "
         }}
       >

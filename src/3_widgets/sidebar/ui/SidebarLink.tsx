@@ -15,7 +15,7 @@ export const SidebarLink = ({
       to={to}
       className={
         className +
-        "hover:bg-primary/10 block pl-1 py-3 transition-all ease-in duration-300 "
+        "block pl-1 py-3 transition-all ease-in duration-300 "
       }
     >
       {children}
