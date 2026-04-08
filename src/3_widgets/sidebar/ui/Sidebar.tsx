@@ -33,9 +33,8 @@ export const Sidebar = ({ className = "" }: { className?: string }) => {
       </div>
       <ul className={"flex flex-col gap-y-1 border-b border-primary/10 mb-2"}>
         {categories.map((c, n) => (
-          <li className="">
+          <li className="" key={n}>
             <SidebarLink
-              key={n}
               className={
                 isActiveCategory(c.value)
                   ? "bg-primary text-primary-content rounded-r-lg "
