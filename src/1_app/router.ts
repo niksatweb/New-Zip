@@ -45,7 +45,7 @@ export const Router = createBrowserRouter([
         Component: Support,
       },
       {
-        path: ":id",
+        path: "/product/:id",
         Component: ProductDetailPage,
       },
     ],
