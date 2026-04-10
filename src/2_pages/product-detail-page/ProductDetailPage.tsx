@@ -16,10 +16,23 @@ export const ProductDetailPage = () => {
   console.log(productDetail)
   return (
     <Container className="mx-auto flex justify-center items-center">
-      <ProductImage
-        src={productDetail?.previewImageUrl}
-        alt={productDetail?.previewImageAlt}
-      />
+      <div className="flex items-center justify-center w-full gap-x-20">
+        <div className="h-60">
+          <ProductImage
+            className="w-full h-full scale-95 group-hover:scale-100 duration-700 transition-all object-contain "
+            src={productDetail?.previewImageUrl}
+            alt={productDetail?.previewImageAlt}
+          />
+        </div>
+        <div>
+          <ProductName name={productDetail?.name}></ProductName>
+          <ProductCondition
+            condition={productDetail?.condition}
+            className=""
+          ></ProductCondition>
+          <ProductPrice price={productDetail?.price}></ProductPrice>
+        </div>
+      </div>
     </Container>
   )
 }

@@ -9,9 +9,5 @@ export const ProductImage = ({
   src?: string
   className?: string
 }) => {
-  return (
-    <div className="h-60">
-      <img className={className} src={src} alt={alt} />
-    </div>
-  )
+  return <img className={className} src={src} alt={alt} />
 }
