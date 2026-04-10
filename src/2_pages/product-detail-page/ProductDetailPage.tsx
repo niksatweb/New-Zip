@@ -1,14 +1,16 @@
 import { useProductDetailQuery } from "@/4_entities/product"
 import { Container } from "@/5_shared/ui"
-import { useSearchParams } from "react-router"
+import { useParams } from "react-router"
+import { LoaderCircle } from "lucide-react"
 
 export const ProductDetailPage = () => {
-  const searchParams = useSearchParams()
-  console.log(searchParams)
-  const { productDetail, isLoading } = useProductDetailQuery('HMI_003')
+  const { id } = useParams()
+  const { productDetail, isLoading } = useProductDetailQuery(id)
   return (
-    <Container className="mx-auto flex">
-      <div></div>
+    <Container className="mx-auto flex justify-center items-center h-svh">
+      <div>
+        
+      </div>
     </Container>
   )
 }

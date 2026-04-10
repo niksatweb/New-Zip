@@ -7,6 +7,7 @@ import { ProductName } from "./ProductName"
 import { ProductDeliveryTime } from "./ProductDeliveryTime"
 import { ProductPrice } from "./ProductPrice"
 import { BasketButton } from "@/5_shared/ui"
+import { useNavigate } from "react-router"
 
 export const ProductCard = ({
   className = "",
@@ -15,8 +16,11 @@ export const ProductCard = ({
   className?: string
   product: ProductBackend
 }) => {
+  const navigate = useNavigate()
+  const onClick = () => navigate(`/product/${product.id}`)
   return (
     <div
+      onClick={onClick}
       className={
         "relative group items-center justify-center cursor-pointer group " +
         className
