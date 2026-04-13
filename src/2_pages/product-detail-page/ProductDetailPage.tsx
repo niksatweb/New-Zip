@@ -9,28 +9,26 @@ import { ProductDeliveryTime } from "@/4_entities/product/ui/productCard/Product
 import { ProductPrice } from "@/4_entities/product/ui/productCard/ProductPrice"
 import { BasketButton } from "@/5_shared/ui"
 import { ProductCondition } from "@/4_entities/product/ui/productCard/ProductCondition"
+import { ImageGallery } from "@/3_widgets/imageGallery"
+import { ProductDetailGallery } from "@/4_entities/product"
 
 export const ProductDetailPage = () => {
   const { id } = useParams()
   const { productDetail, isLoading } = useProductDetailQuery(id)
-  console.log(productDetail)
   return (
     <Container className="mx-auto flex justify-center items-center">
       <div className="flex items-center justify-center w-full gap-x-20">
-        <div className="h-60">
-          <ProductImage
-            className="w-full h-full scale-95 group-hover:scale-100 duration-700 transition-all object-contain "
-            src={productDetail?.previewImageUrl}
-            alt={productDetail?.previewImageAlt}
-          />
+        <div className="">
+          <ProductDetailGallery className="max-w-120" product={productDetail}></ProductDetailGallery>
         </div>
-        <div>
+        <div className="flex-1">
           <ProductName name={productDetail?.name}></ProductName>
           <ProductCondition
             condition={productDetail?.condition}
             className=""
           ></ProductCondition>
           <ProductPrice price={productDetail?.price}></ProductPrice>
+          <p>{productDetail?.description}</p>
         </div>
       </div>
     </Container>

@@ -2,7 +2,7 @@ export const ProductName = ({
   name,
   className = "",
 }: {
-  name: string
+  name?: string
   className?: string
 }) => {
   return (

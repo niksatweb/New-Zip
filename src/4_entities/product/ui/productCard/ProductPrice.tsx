@@ -1,10 +1,10 @@
 import { formatPrice } from "@/5_shared/lib"
 
 export const ProductPrice = ({
-  price,
+  price = 0,
   className = "",
 }: {
-  price: number
+  price?: number
   className?: string
 }) => {
   return (

@@ -1,4 +1,4 @@
-import { ProductCardSkeleton } from "./ProductCardSkeleton"
+import { ProductCardSkeleton } from "./productCard/ProductCardSkeleton"
 
 export const ProductGridSkeleton = ({
   className = "",
