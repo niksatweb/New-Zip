@@ -17,7 +17,7 @@ export const ProductDetailPage = () => {
   const { id } = useParams()
   const { productDetail, isLoading } = useProductDetailQuery(id)
   return (
-    <Container className="mx-auto flex justify-center items-center">
+    <Container className="mx-auto flex justify-center items-center h-full">
       {isLoading ? (
         <Loader2 size={60} className="animate-spin" />
       ) : (
@@ -30,7 +30,7 @@ export const ProductDetailPage = () => {
           </div>
           <div className="flex-1 flex flex-col gap-y-4">
             <ProductName name={productDetail?.name}></ProductName>
-            <ProductCondition
+            <ProductCondition className="max-w-10"
               condition={productDetail?.condition}
             ></ProductCondition>
             <p>{productDetail?.description}</p>
@@ -38,6 +38,7 @@ export const ProductDetailPage = () => {
               className="flex items-end gap-x-8 text-xl"
               price={productDetail?.price}
             ></ProductPrice>
+            <p>Скачать техническую документацию: </p>
           </div>
         </div>
       )}
