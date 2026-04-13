@@ -4,7 +4,7 @@ export const ProductCondition = ({
   className = "",
   condition,
 }: {
-  className: string
+  className?: string
   condition?: ProductBackend["condition"]
 }) => {
   return (

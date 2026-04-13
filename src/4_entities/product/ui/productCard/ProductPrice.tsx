@@ -8,9 +8,9 @@ export const ProductPrice = ({
   className?: string
 }) => {
   return (
-    <div>
-      <p className={"text-xl text-primary" + className}>{formatPrice(price)}</p>
-      <p className="text-[10px]">с НДС 22%</p>
+    <div className={className}>
+      <p className={"text-lg text-primary"}>{formatPrice(price)}</p>
+      <p>с НДС 22%</p>
     </div>
   )
 }
