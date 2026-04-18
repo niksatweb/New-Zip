@@ -38,7 +38,7 @@ export const Sidebar = ({ className = "" }: { className?: string }) => {
               className={
                 isActiveCategory(c.value)
                   ? "bg-primary text-primary-content rounded-r-lg "
-                  : "hover:bg-primary/10 "
+                  : "hover:bg-primary/10 hover:rounded-r-lg "
               }
               to={createLink(c.value)}
             >
