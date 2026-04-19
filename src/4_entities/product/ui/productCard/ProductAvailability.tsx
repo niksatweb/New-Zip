@@ -1,23 +1,22 @@
 import type { ProductBackend } from "../../types/product.backend"
 
-export const ProductCondition = ({
+export const ProductAvailability = ({
   className = "",
-  condition,
+  onStock,
 }: {
   className?: string
-  condition?: ProductBackend["condition"]
+  onStock?: ProductBackend["onStock"]
 }) => {
   return (
     <div
       className={
         "" +
-        (condition === "New"
-          ? "bg-blue-900 text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-tighter w-20 "
+        (onStock ? "bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 uppercase tracking-tighter w-20 "
           : "bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 uppercase tracking-tighter w-20 ") +
         className
       }
     >
-      {condition === "New" ? "Новый" : "Б/У"}
+      {onStock ? "В наличии" : "Под заказ"}
     </div>
   )
 }

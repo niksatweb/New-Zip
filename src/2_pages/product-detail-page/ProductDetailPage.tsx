@@ -1,4 +1,4 @@
-import { useProductDetailQuery } from "@/4_entities/product"
+import { ProductAvailability, useProductDetailQuery } from "@/4_entities/product"
 import { Container, FavoritesButton } from "@/5_shared/ui"
 import { useParams } from "react-router"
 import { LoaderCircle } from "lucide-react"
@@ -24,18 +24,16 @@ export const ProductDetailPage = () => {
   ) : (
     <Container className="mx-auto flex justify-center items-center h-full">
       <div className="flex items-start justify-center w-full gap-x-20">
-        <div className="">
+        <div className="flex flex-col gap-y-1">
+          <ProductCondition condition={productDetail?.condition}/>
+            <ProductAvailability onStock={productDetail?.onStock} />
           <ProductDetailGallery
-            className="max-w-120"
+            className="w-120 mx-20"
             product={productDetail}
           ></ProductDetailGallery>
         </div>
         <div className="flex-1 flex flex-col gap-y-4">
           <ProductName name={productDetail?.name}></ProductName>
-          <ProductCondition
-            className="max-w-20"
-            condition={productDetail?.condition}
-          ></ProductCondition>
           <p>{productDetail?.description}</p>
           <ProductPrice
             className="flex items-end gap-x-8 text-xl"
