@@ -28,7 +28,7 @@ export const ProductDetailPage = () => {
           <ProductCondition condition={productDetail?.condition}/>
             <ProductAvailability onStock={productDetail?.onStock} />
           <ProductDetailGallery
-            className="w-120 mx-20"
+            className="w-120 ml-20"
             product={productDetail}
           ></ProductDetailGallery>
         </div>
