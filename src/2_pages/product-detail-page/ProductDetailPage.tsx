@@ -42,13 +42,13 @@ export const ProductDetailPage = () => {
             price={productDetail?.price}
           ></ProductPrice>
 
-          <p className="flex">
-            Техническая документация:
-            <a href={productDetail?.datasheet} className="flex gap-x-2">
+          <div className="flex gap-x-2">
+            <p>Техническая документация:</p>
+            <a href={productDetail?.datasheet} className="flex gap-x-2 group">
               Скачать
-              <Download />
+              <Download className="group-hover:text-primary/50" />
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </Container>
