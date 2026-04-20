@@ -10,7 +10,7 @@ export const ProductPrice = ({
   return (
     <div className={className}>
       <p className={"text-lg text-primary"}>{formatPrice(price)}</p>
-      <p>с НДС 22%</p>
+      <p className="text-xs">с НДС 22%</p>
     </div>
   )
 }

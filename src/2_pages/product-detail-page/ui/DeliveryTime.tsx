@@ -7,7 +7,7 @@ export const DeliveryTime = ({ children }: { children: ReactNode }) => {
       <div>
         <Truck className="text-secondary" />
       </div>
-      <p>{`Срок поставки до Вашего склада (в пределах РФ): ${children} нед.`}</p>
+      <p>{`Срок доставки до Вашего склада (в пределах РФ): ${children} нед.`}</p>
     </div>
   )
 }
