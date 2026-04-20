@@ -1,18 +1,17 @@
-import { ProductAvailability, useProductDetailQuery } from "@/4_entities/product"
+import { useProductDetailQuery } from "@/4_entities/product"
 import { Container, FavoritesButton } from "@/5_shared/ui"
 import { useParams } from "react-router"
-import { LoaderCircle } from "lucide-react"
-import { ProductImage } from "@/4_entities/product/ui/productCard/ProductImage"
-import { ProductBrand } from "@/4_entities/product/ui/productCard/ProductBrand"
-import { ProductName } from "@/4_entities/product/ui/productCard/ProductName"
-import { ProductDeliveryTime } from "@/4_entities/product/ui/productCard/ProductDeliveryTime"
 import { ProductPrice } from "@/4_entities/product/ui/productCard/ProductPrice"
-import { BasketButton } from "@/5_shared/ui"
-import { ProductCondition } from "@/4_entities/product/ui/productCard/ProductCondition"
-import { ImageGallery } from "@/3_widgets/imageGallery"
+import { Condition } from "./ui/Condition"
 import { ProductDetailGallery } from "@/4_entities/product"
 import { Loader2 } from "lucide-react"
 import { Download } from "lucide-react"
+import { ProductCode } from "./ui/ProductCode"
+import { ProductAvailability } from "./ui/ProductAvailability"
+import { Name } from "./ui/Name"
+import { Price } from "./ui/Price"
+import { Description } from "./ui/Description"
+import { DeliveryTime } from "./ui/DeliveryTime"
 
 export const ProductDetailPage = () => {
   const { id } = useParams()
@@ -24,22 +23,22 @@ export const ProductDetailPage = () => {
   ) : (
     <Container className="mx-auto flex justify-center items-center h-full">
       <div className="flex items-start justify-center w-full gap-x-20">
-        <div className="flex flex-col gap-y-1">
-          <ProductCondition condition={productDetail?.condition}/>
+        <div className="flex flex-col gap-y-1 relative">
+          <div className="absolute left-0 top-0 z-20 flex flex-col gap-1">
+            <Condition condition={productDetail?.condition} />
             <ProductAvailability onStock={productDetail?.onStock} />
+          </div>
           <ProductDetailGallery
-            className="w-120 ml-20"
+            className="w-120"
             product={productDetail}
           ></ProductDetailGallery>
         </div>
         <div className="flex-1 flex flex-col gap-y-4">
-          <ProductName name={productDetail?.name}></ProductName>
-          <p>{productDetail?.description}</p>
-          <ProductPrice
-            className="flex items-end gap-x-8 text-xl"
-            price={productDetail?.price}
-          ></ProductPrice>
-
+          <Name>{productDetail?.name}</Name>
+          <ProductCode>{productDetail?.productCode}</ProductCode>
+          <Description>{productDetail?.description}</Description>
+          <Price className="mt-12" price={productDetail?.price} />
+          <DeliveryTime>{productDetail?.deliveryTime}</DeliveryTime>
           <div className="flex gap-x-2">
             <p>Техническая документация:</p>
             <a href={productDetail?.datasheet} className="flex gap-x-2 group">

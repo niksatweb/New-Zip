@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, type ReactNode } from "react"
 import ImageGallery from "react-image-gallery"
 import "react-image-gallery/styles/image-gallery.css"
 import type { GalleryItem, ImageGalleryRef } from "react-image-gallery"
@@ -8,9 +8,11 @@ import type {
 } from "../types/product.backend"
 
 export const ProductDetailGallery = ({
+  children,
   product,
   className = "",
 }: {
+  children?: ReactNode
   product?: ProductDetailBackend
   className?: string
 }) => {

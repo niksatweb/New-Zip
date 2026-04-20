@@ -172,7 +172,7 @@ export const productsList: ProductBackend[] = [
     previewImageUrl: "/images/products/mock/10.webp",
     previewImageAlt: "SCADA система Siemens",
     brand: "Siemens",
-    name: "SIMATIC WinCC SCADA v8.0 6AV6381-2BH07-0AV0",
+    name: "Модуль SIMATIC WinCC SCADA v8.0 6AV6381-2BH07-0AV0",
     deliveryTime: 1,
     price: 4560.0,
     productCode: "6AV6381-2BH07-0AV0",
@@ -302,7 +302,7 @@ export const productsList: ProductBackend[] = [
     previewImageUrl: "/images/products/mock/10.webp",
     previewImageAlt: "SCADA система Siemens",
     brand: "Siemens",
-    name: "SIMATIC WinCC SCADA v8.0 6AV6381-2BH07-0AV0",
+    name: "Модуль SIMATIC WinCC SCADA v8.0 6AV6381-2BH07-0AV0",
     deliveryTime: 1,
     price: 4560.0,
     productCode: "6AV6381-2BH07-0AV0",
@@ -318,7 +318,7 @@ export const ProductsDetailList: ProductDetailBackend[] = [
     previewImageUrl: "/images/products/mock/1.jpg",
     previewImageAlt: "Контроллер Siemens S7-1200 PLC",
     brand: "Siemens",
-    name: "SIMATIC S7-1200 CPU 1214C",
+    name: "Компактный центральный процессор SIMATIC S7-1200 CPU 1214C",
     deliveryTime: 3,
     price: 485.5,
     description:
@@ -338,7 +338,7 @@ export const ProductsDetailList: ProductDetailBackend[] = [
     productCode: "6ES7214-1AG40-0XB0",
     datasheet: "https://www.siemens.com/s7-1200-cpu1214c-datasheet.pdf",
     seo: {
-      title: "Siemens SIMATIC S7-1200 CPU 1214C | Компактный ПЛК контроллер",
+      title: "Компактный центральный процессор Siemens SIMATIC S7-1200 CPU 1214C | Компактный ПЛК контроллер",
       description:
         "Компактный программируемый логический контроллер с интегрированным PROFINET для малых и средних промышленных приложений автоматизации.",
       keywords: [
@@ -400,7 +400,7 @@ export const ProductsDetailList: ProductDetailBackend[] = [
     previewImageUrl: "/images/products/mock/3.jpg",
     previewImageAlt: "Сенсорная панель Siemens HMI",
     brand: "Siemens",
-    name: "SIMATIC HMI TP700 Comfort Panel",
+    name: "Панель SIMATIC HMI TP700 Comfort Panel",
     deliveryTime: 4,
     price: 1890.75,
     description:
@@ -684,7 +684,7 @@ export const ProductsDetailList: ProductDetailBackend[] = [
     previewImageUrl: "/images/products/mock/10.webp",
     previewImageAlt: "SCADA система Siemens",
     brand: "Siemens",
-    name: "SIMATIC WinCC SCADA v8.0",
+    name: "Программное обеспечение SIMATIC WinCC SCADA v8.0",
     deliveryTime: 1,
     price: 4560.0,
     description:
@@ -705,7 +705,7 @@ export const ProductsDetailList: ProductDetailBackend[] = [
     datasheet: "https://www.siemens.com/wincc-v8-datasheet.pdf",
     seo: {
       title:
-        "Siemens SIMATIC WinCC v8.0 | Промышленное SCADA программное обеспечение",
+        "Модуль Siemens SIMATIC WinCC v8.0 | Промышленное SCADA программное обеспечение",
       description:
         "SCADA программное обеспечение с 2048 тегами, архивированием, отчетностью и веб-операцией для промышленного мониторинга и управления процессами.",
       keywords: [
