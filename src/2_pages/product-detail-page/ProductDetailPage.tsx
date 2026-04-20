@@ -12,6 +12,9 @@ import { Name } from "./ui/Name"
 import { Price } from "./ui/Price"
 import { Description } from "./ui/Description"
 import { DeliveryTime } from "./ui/DeliveryTime"
+import { AddToCartButton } from "./ui/AddToCartButton"
+import { AddToFavoritesButton } from "./ui/AddToFavoritesButton"
+import { Manufacturer } from "./ui/Manufacturer"
 
 export const ProductDetailPage = () => {
   const { id } = useParams()
@@ -29,16 +32,23 @@ export const ProductDetailPage = () => {
             <ProductAvailability onStock={productDetail?.onStock} />
           </div>
           <ProductDetailGallery
-            className="w-120"
+            className="max-w-100"
             product={productDetail}
           ></ProductDetailGallery>
         </div>
         <div className="flex-1 flex flex-col gap-y-4">
-          <Name>{productDetail?.name}</Name>
+          <div>
+            <Manufacturer>{productDetail?.brand}</Manufacturer>
+            <Name>{productDetail?.name}</Name>
+          </div>
           <ProductCode>{productDetail?.productCode}</ProductCode>
           <Description>{productDetail?.description}</Description>
           <Price className="mt-12" price={productDetail?.price} />
           <DeliveryTime>{productDetail?.deliveryTime}</DeliveryTime>
+          <div className="flex items-center gap-4">
+            <AddToCartButton />
+            <AddToFavoritesButton />
+          </div>
           <div className="flex gap-x-2">
             <p>Техническая документация:</p>
             <a href={productDetail?.datasheet} className="flex gap-x-2 group">
