@@ -4,11 +4,11 @@ import { productQueries } from "./product.queries"
 export function useProductDetailQuery(id?: string) {
   const query = useQuery({
     ...productQueries.detail(id ?? ""),
-    enabled: !id,
+    enabled: !!id,
 
     // for future
-    // placeholderData: (previouseData, previouseQuery) => {
-    //   return previouseData
+    // placeholderData: (previousData, previousQuery) => {
+    //   return previousData
     // },
   })
 

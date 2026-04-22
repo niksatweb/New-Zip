@@ -2,7 +2,7 @@ import { queryOptions } from "@tanstack/react-query"
 import { getProductList, getProductDetail } from "./product.api"
 
 export const productQueries = {
-  all: () => ["ptoduct"],
+  all: () => ["product"],
   lists: () => [...productQueries.all(), "list"],
   list: () => {
     return queryOptions({

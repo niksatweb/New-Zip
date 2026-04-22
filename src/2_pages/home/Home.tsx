@@ -17,15 +17,15 @@ export function Home() {
         <section className="flex-1 py-6">
           <PageTitle>Промышленное оборудование</PageTitle>
           <PageSubtitle>
-            Прямые поставки от ведущих мировых производителей. Официальная
-            гарантия и техническая поддержка.
+            <p>Прямые поставки от ведущих мировых производителей.</p>
+            <p>Официальная гарантия и техническая поддержка.</p>
           </PageSubtitle>
           <ProductGrid className="pt-6">
             {isLoading ? (
               <ProductGridSkeleton />
             ) : (
-              productList.map((product) => (
-                <ProductCard product={product}></ProductCard>
+              productList.map((product, n) => (
+                <ProductCard key={n} product={product}></ProductCard>
               ))
             )}
           </ProductGrid>
