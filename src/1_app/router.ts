@@ -9,6 +9,7 @@ import { Payments } from "@/2_pages/payments/Payments"
 import { Returns } from "@/2_pages/returns"
 import { Support } from "@/2_pages/support"
 import { ProductDetailPage } from "@/2_pages/product-detail-page"
+import { Cart } from "@/2_pages/cart"
 
 export const Router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const Router = createBrowserRouter([
       {
         path: "/product/:id",
         Component: ProductDetailPage,
+      },
+      {
+        path: "/cart",
+        Component: Cart,
       },
     ],
   },
