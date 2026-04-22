@@ -5,6 +5,7 @@ import { Container } from "@/5_shared/ui"
 import { Searchbar } from "@/3_widgets/searchbar"
 import { BasketButton } from "@/5_shared/ui"
 import { FavoritesButton } from "@/5_shared/ui"
+import { Link } from "react-router"
 
 export function Topbar({ className }: { className: string }) {
   const [mobMenuIsOpen, setMobMenuOpen] = useState(false)
@@ -29,7 +30,9 @@ export function Topbar({ className }: { className: string }) {
       </div>
       <div className="actions flex gap-x-4">
         <FavoritesButton badge={2} />
-        <BasketButton />
+        <Link to="cart">
+          <BasketButton />
+        </Link>
       </div>
     </Container>
   )
