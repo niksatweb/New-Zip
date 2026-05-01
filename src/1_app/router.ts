@@ -45,7 +45,7 @@ export const Router = createBrowserRouter([
         Component: Support,
       },
       {
-        path: "/product/:id",
+        path: "/product-detail/:id",
         Component: ProductDetailPage,
       },
     ],
