@@ -1,15 +1,18 @@
 import { Logo } from "@/5_shared/assets/images/Logo"
 import { Navbar } from "../../navbar"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Container } from "@/5_shared/ui"
 import { Searchbar } from "@/3_widgets/searchbar"
 import { BasketButton } from "@/5_shared/ui"
 import { FavoritesButton } from "@/5_shared/ui"
 import { Link } from "react-router"
+import { useCartStore } from "@/4_entities/cart"
 
 export function Topbar({ className }: { className: string }) {
   const [mobMenuIsOpen, setMobMenuOpen] = useState(false)
   const handleClick = () => setMobMenuOpen(!mobMenuIsOpen)
+
+  const { productsQuantity, getCartList } = useCartStore((state) => state)
 
   return (
     <Container
@@ -29,10 +32,13 @@ export function Topbar({ className }: { className: string }) {
         </div>
       </div>
       <div className="actions flex gap-x-4">
-        <FavoritesButton badge={2} />
-        <Link to="cart">
-          <BasketButton />
-        </Link>
+        <FavoritesButton onClick={() => {}} />
+        <BasketButton
+          onClick={() => {
+            console.log(getCartList())
+          }}
+          badge={productsQuantity}
+        />
       </div>
     </Container>
   )

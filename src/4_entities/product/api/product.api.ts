@@ -1,5 +1,8 @@
-import type { ProductBackend } from "../types/product.backend"
-import type { ProductDetailBackend } from "../types/product.backend"
+import type {
+  ProductBackend,
+  ProductDetailBackend,
+} from "../types/product.backend"
+
 import { productMapper } from "../lib/product.mapper"
 
 import { productsList, ProductsDetailList, productMock } from "./product.mock"

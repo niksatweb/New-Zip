@@ -8,6 +8,7 @@ import { ProductDeliveryTime } from "./ProductDeliveryTime"
 import { ProductPrice } from "./ProductPrice"
 import { BasketButton } from "@/5_shared/ui"
 import { useNavigate } from "react-router"
+import { useCartStore } from "@/4_entities/cart"
 
 export const ProductCard = ({
   className = "",
@@ -17,12 +18,18 @@ export const ProductCard = ({
   product: ProductBackend
 }) => {
   const navigate = useNavigate()
-  const onClick = () => {
+  const handleCardClick = (e: React.MouseEvent) => {
     navigate(`/product-detail/${product.id}`)
   }
+  const addToCart = useCartStore((state) => state.addProduct)
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    addToCart(product)
+  }
+
   return (
     <div
-      onClick={onClick}
+      onClick={handleCardClick}
       className={
         "relative group items-center justify-center cursor-pointer group " +
         className
@@ -45,7 +52,10 @@ export const ProductCard = ({
       <ProductDeliveryTime deliveryTime={product.deliveryTime} />
       <div className="flex justify-between">
         <ProductPrice price={product.price} />
-        <BasketButton className="cursor-pointer py-3 px-2 rounded-lg bg-primary text-primary-content" />
+        <BasketButton
+          onClick={handleAddToCart}
+          className="cursor-pointer py-3 px-2 rounded-lg bg-primary text-primary-content"
+        />
       </div>
     </div>
   )

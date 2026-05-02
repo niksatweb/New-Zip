@@ -1,4 +1,4 @@
-import { CartItemCard } from "@/4_entities/cart/ui"
+import { CartItemCard } from "@/4_entities/cart"
 
 export const CartList = () => {
   return (

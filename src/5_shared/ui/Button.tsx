@@ -5,19 +5,20 @@ export const Button = ({
   href = "#",
   badge,
   className = "",
+  onClick,
 }: {
   children: ReactNode
   href?: string
   badge?: number
   className?: string
+  onClick: React.MouseEventHandler
 }) => {
   return (
-    <div className={className}>
-      <a
+    <div onClick={onClick} className={className}>
+      <div
         className={
-          "relative hover:text-secondary transition-all duration-300 ease-out  " 
+          "relative hover:text-secondary transition-all duration-300 ease-out "
         }
-        href={href}
       >
         {children}
         {badge && (
@@ -29,7 +30,7 @@ export const Button = ({
             {badge > 99 ? 99 : badge}
           </span>
         )}
-      </a>
+      </div>
     </div>
   )
 }
