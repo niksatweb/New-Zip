@@ -7,8 +7,10 @@ import { BasketButton } from "@/5_shared/ui"
 import { FavoritesButton } from "@/5_shared/ui"
 import { Link } from "react-router"
 import { useCartStore } from "@/4_entities/cart"
+import { useNavigate } from "react-router"
 
 export function Topbar({ className }: { className: string }) {
+  const navigate = useNavigate()
   const [mobMenuIsOpen, setMobMenuOpen] = useState(false)
   const handleClick = () => setMobMenuOpen(!mobMenuIsOpen)
 
@@ -35,9 +37,9 @@ export function Topbar({ className }: { className: string }) {
         <FavoritesButton onClick={() => {}} />
         <BasketButton
           onClick={() => {
-            console.log(getCartList())
+            navigate("/cart")
           }}
-          badge={productsQuantity}
+          badge={getCartList().length}
         />
       </div>
     </Container>
