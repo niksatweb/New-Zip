@@ -5,6 +5,7 @@ import { Condition } from "./ui/Condition"
 import { ProductDetailGallery } from "@/4_entities/product"
 import { Loader2 } from "lucide-react"
 import { Download } from "lucide-react"
+import { useCartStore } from "@/4_entities/cart"
 
 import {
   Manufacturer,
@@ -19,6 +20,7 @@ import {
 } from "./"
 
 export const ProductDetailPage = () => {
+  const addToCart = useCartStore((state) => state.addProduct)
   const { id } = useParams()
   const { productDetail, isLoading } = useProductDetailQuery(id)
   return isLoading ? (
@@ -49,7 +51,7 @@ export const ProductDetailPage = () => {
           <DeliveryTime>{productDetail?.deliveryTime}</DeliveryTime>
           <div className="flex items-center gap-4">
             <AddToCartButton />
-            <AddToFavoritesButton />
+            <AddToFavoritesButton onClick={() => addToCart(productDetail)} />
           </div>
           <div className="flex gap-x-2">
             <p>Техническая документация:</p>
