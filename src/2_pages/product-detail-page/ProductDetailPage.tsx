@@ -20,9 +20,11 @@ import {
 } from "./"
 
 export const ProductDetailPage = () => {
-  const addToCart = useCartStore((state) => state.addProduct)
   const { id } = useParams()
   const { productDetail, isLoading } = useProductDetailQuery(id)
+  const { addProduct, getCartList } = useCartStore((state) => state)
+  const cartIncludesProducts = getCartList().includes(productDetail)
+
   return isLoading ? (
     <div className="w-full h-150 flex items-center justify-center">
       <Loader2 size={160} className="animate-spin text-primary/20" />
@@ -49,9 +51,13 @@ export const ProductDetailPage = () => {
           <Description>{productDetail?.description}</Description>
           <Price className="mt-12" price={productDetail?.price} />
           <DeliveryTime>{productDetail?.deliveryTime}</DeliveryTime>
-          <div className="flex items-center gap-4">
-            <AddToCartButton />
-            <AddToFavoritesButton onClick={() => addToCart(productDetail)} />
+          <div className="flex items-center gap-4 ">
+            {cartIncludesProducts ? (
+              <p>Кнопка удалить/увеличить кол-во</p>
+            ) : (
+              <AddToCartButton onClick={() => addProduct(productDetail)} />
+            )}
+            <AddToFavoritesButton />
           </div>
           <div className="flex gap-x-2">
             <p>Техническая документация:</p>

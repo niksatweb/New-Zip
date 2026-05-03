@@ -3,12 +3,12 @@ import { HeartIcon } from "lucide-react"
 export const AddToFavoritesButton = ({
   onClick,
 }: {
-  onClick: React.MouseEventHandler
+  onClick?: React.MouseEventHandler
 }) => {
   return (
     <button
       onClick={onClick}
-      className="hover:text-secondary duration-300 transition-colors border border-primary/20 cursor-pointer text-xs tracking-widest font-bold flex w-fit text-primary gap-3 uppercase items-center self-stretch px-6"
+      className="hover:text-secondary duration-300 transition-colors border border-primary/20 cursor-pointer text-xs tracking-widest font-bold flex w-fit text-primary gap-3 uppercase items-center self-stretch px-6 h-14"
     >
       <HeartIcon className="" />
     </button>

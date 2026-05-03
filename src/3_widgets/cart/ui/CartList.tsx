@@ -2,7 +2,7 @@ import { CartItemCard } from "@/4_entities/cart"
 import type { ProductBackend } from "@/4_entities/product/types/product.backend"
 
 export const CartList = ({ list }: { list: ProductBackend[] }) => {
-  if (list) {
+  if (list.length !== 0) {
     return (
       <main className="flex flex-col gap-x-">
         {list.map((i) => (
@@ -13,7 +13,7 @@ export const CartList = ({ list }: { list: ProductBackend[] }) => {
   }
   return (
     <main className="flex flex-col gap-x-">
-      <p>Nothing here yet</p>
+      <p>Nothing in the cart yet</p>
     </main>
   )
 }
