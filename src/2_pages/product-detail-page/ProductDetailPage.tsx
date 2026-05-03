@@ -20,6 +20,7 @@ import {
 } from "./"
 
 export const ProductDetailPage = () => {
+  const addToCart = useCartStore((state) => state.addProduct)
   const { id } = useParams()
   const { productDetail, isLoading } = useProductDetailQuery(id)
   const { addProduct, getCartList } = useCartStore((state) => state)
