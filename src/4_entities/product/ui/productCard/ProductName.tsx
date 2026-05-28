@@ -6,12 +6,7 @@ export const ProductName = ({
   className?: string
 }) => {
   return (
-    <p
-      className={
-        "text-xs font-bold mb-2 uppercase text-primary min-h-12 " +
-        className
-      }
-    >
+    <p className={"text-xs font-bold mb-2 uppercase text-primary " + className}>
       {name}
     </p>
   )

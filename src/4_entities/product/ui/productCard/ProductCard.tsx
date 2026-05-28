@@ -39,7 +39,10 @@ export const ProductCard = ({
         condition={product.condition}
         className="absolute left-0 top-0 z-99"
       ></ProductCondition>
-      <FavoritesButton className="absolute right-0 top-0 z-100" />
+      <FavoritesButton
+        onClick={() => {}}
+        className="absolute right-0 top-0 z-100"
+      />
       <div className="h-60">
         <ProductImage
           className="w-full h-full scale-95 group-hover:scale-100 duration-700 transition-all object-contain "
@@ -48,7 +51,10 @@ export const ProductCard = ({
         />
       </div>
       <ProductBrand brand={product.brand} />
-      <ProductName className="group-hover:underline" name={product.name} />
+      <ProductName
+        className="group-hover:underline min-h-12"
+        name={product.name}
+      />
       <ProductDeliveryTime deliveryTime={product.deliveryTime} />
       <div className="flex justify-between">
         <ProductPrice price={product.price} />

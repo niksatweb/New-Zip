@@ -20,12 +20,13 @@ import {
 } from "./"
 
 export const ProductDetailPage = () => {
-  const addToCart = useCartStore((state) => state.addProduct)
   const { id } = useParams()
   const { productDetail, isLoading } = useProductDetailQuery(id)
-  const { addProduct, getCartList } = useCartStore((state) => state)
-  const cartIncludesProducts = getCartList().includes(productDetail)
-
+  const { addProduct, cartItems } = useCartStore((state) => state)
+  let cartIncludesProducts
+  if (productDetail) {
+    cartIncludesProducts = cartItems.map((i) => i.id).includes(productDetail.id)
+  }
   return isLoading ? (
     <div className="w-full h-150 flex items-center justify-center">
       <Loader2 size={160} className="animate-spin text-primary/20" />
@@ -56,7 +57,7 @@ export const ProductDetailPage = () => {
             {cartIncludesProducts ? (
               <p>Кнопка удалить/увеличить кол-во</p>
             ) : (
-              <AddToCartButton onClick={() => addProduct(productDetail)} />
+              <AddToCartButton onClick={() => addProduct(productDetail!)} />
             )}
             <AddToFavoritesButton />
           </div>

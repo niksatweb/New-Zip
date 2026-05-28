@@ -14,7 +14,7 @@ export function Topbar({ className }: { className: string }) {
   const [mobMenuIsOpen, setMobMenuOpen] = useState(false)
   const handleClick = () => setMobMenuOpen(!mobMenuIsOpen)
 
-  const { productsQuantity, getCartList } = useCartStore((state) => state)
+  const { cartItems } = useCartStore((state) => state)
 
   return (
     <Container
@@ -39,7 +39,7 @@ export function Topbar({ className }: { className: string }) {
           onClick={() => {
             navigate("/cart")
           }}
-          badge={getCartList().length}
+          badge={cartItems.length}
         />
       </div>
     </Container>

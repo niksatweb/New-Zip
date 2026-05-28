@@ -2,11 +2,11 @@ import { ShoppingCartIcon } from "lucide-react"
 import { Button } from "./Button"
 
 export const BasketButton = ({
-  badge = 0,
+  badge,
   className = "",
   onClick,
 }: {
-  badge?: number
+  badge?: number | undefined
   className?: string
   onClick?: any
 }) => {
@@ -14,7 +14,7 @@ export const BasketButton = ({
     <Button
       onClick={onClick}
       className={"cursor-pointer " + className}
-      badge={badge > 0 ? badge : ""}
+      badge={badge ? badge : undefined}
     >
       <ShoppingCartIcon />
     </Button>

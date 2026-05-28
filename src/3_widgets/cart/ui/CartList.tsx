@@ -1,18 +1,19 @@
-import { CartItemCard } from "@/4_entities/cart"
+import { CartItemCard, useCartStore } from "@/4_entities/cart"
 import type { ProductBackend } from "@/4_entities/product/types/product.backend"
 
-export const CartList = ({ list }: { list: ProductBackend[] }) => {
-  if (list.length !== 0) {
+export const CartList = ({ className = "" }: { className: string }) => {
+  const { cartItems } = useCartStore()
+  if (cartItems.length !== 0) {
     return (
-      <main className="flex flex-col gap-x-">
-        {list.map((i) => (
-          <CartItemCard product={i} />
+      <main className={className}>
+        {cartItems.map((i, ind) => (
+          <CartItemCard className="flex justify-between" key={ind} item={i} />
         ))}
       </main>
     )
   }
   return (
-    <main className="flex flex-col gap-x-">
+    <main className="flex flex-col">
       <p>Nothing in the cart yet</p>
     </main>
   )
