@@ -39,7 +39,7 @@ export function Topbar({ className }: { className: string }) {
           onClick={() => {
             navigate("/cart")
           }}
-          badge={cartItems.length}
+          badge={cartItems.reduce((sum, i) => sum + i.quantity, 0)}
         />
       </div>
     </Container>
