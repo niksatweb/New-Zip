@@ -45,7 +45,7 @@ export const CartItemCard = ({
           alt={item.previewImageAlt}
         />
       </div>
-      <div className="mr-auto">
+      <div className="mr-auto w-100">
         <ProductBrand brand={item.brand} />
         <ProductName className="group-hover:underline" name={item.name} />
         <ProductDeliveryTime deliveryTime={item.deliveryTime} />

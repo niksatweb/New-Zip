@@ -12,7 +12,7 @@ export const Cart = () => {
     <Container className="mx-auto flex">
       <main className="flex gap-x-16 justify-between w-full h-full">
         <CartList className="flex flex-col flex-1 gap-y-2" />
-        <CartSummary className="flex-1"> </CartSummary>
+        <CartSummary className="flex-1 "> </CartSummary>
       </main>
     </Container>
   )

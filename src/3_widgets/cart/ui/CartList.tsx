@@ -2,14 +2,22 @@ import { CartItemCard, useCartStore } from "@/4_entities/cart"
 import type { ProductBackend } from "@/4_entities/product/types/product.backend"
 
 export const CartList = ({ className = "" }: { className: string }) => {
-  const { cartItems } = useCartStore()
+  const { cartItems, removeAllProducts } = useCartStore()
   if (cartItems.length !== 0) {
     return (
-      <main className={className}>
+      <div className={className}>
+        <button
+          onClick={removeAllProducts}
+          className={
+            "hover:bg-slate-400 transition-all cursor-pointer self-end bg-slate-500 py-2 px-4 text-white border-2 border-slate-600"
+          }
+        >
+          Очистить корзину
+        </button>
         {cartItems.map((i, ind) => (
           <CartItemCard className="flex justify-between" key={ind} item={i} />
         ))}
-      </main>
+      </div>
     )
   }
   return (

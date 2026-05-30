@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import { useCartStore } from "../model/store"
 
 export const CartSummary = ({
   className = "",
@@ -7,5 +8,6 @@ export const CartSummary = ({
   className: string
   children: ReactNode
 }) => {
-  return <div className={className}>{children}</div>
+    const { cartItems } = useCartStore();
+  return <div className={"border-2 self-start "+className}>{children}</div>
 }
