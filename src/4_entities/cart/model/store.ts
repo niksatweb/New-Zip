@@ -21,6 +21,21 @@ export const useCartStore = create<cartState>()(
       cartItems: [],
       addProduct: (product: ProductDetail) =>
         set((state: cartState) => {
+          const existingItem = state.cartItems.find(
+            (item) => item.id === product.id
+          )
+
+          if (existingItem) {
+            // Товар уже в корзине → увеличиваем количество
+            return {
+              cartItems: state.cartItems.map((item) =>
+                item.id === product.id
+                  ? { ...item, quantity: item.quantity + 1 }
+                  : item
+              ),
+            }
+          }
+
           // Нового товара нет → добавляем с quantity = 1
           return {
             cartItems: [...state.cartItems, { ...product, quantity: 1 }],
