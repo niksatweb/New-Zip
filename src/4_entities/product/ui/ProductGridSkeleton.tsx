@@ -1,0 +1,15 @@
+import { ProductCardSkeleton } from "./productCard/ProductCardSkeleton"
+
+export const ProductGridSkeleton = ({
+  className = "",
+}: {
+  className?: string
+}) => {
+  return (
+    <>
+      {Array.from({ length: 12 }).map((i, n) => (
+        <ProductCardSkeleton key={n}></ProductCardSkeleton>
+      ))}
+    </>
+  )
+}

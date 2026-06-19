@@ -26,7 +26,7 @@ export async function getProductList(signal: AbortSignal) {
 }
 
 export async function getProductDetail(id: string, signal: AbortSignal) {
-  //  axisoInstance.get<ProductDetailBackend>(`/product/${id}`)
+  //  axiosInstance.get<ProductDetailBackend>(`/product/${id}`)
   const productDetailBackend =
     await productMock.getDetail<ProductDetailBackend>(`/product/${id}`)
 

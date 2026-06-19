@@ -1,9 +1,11 @@
+import type { ReactNode } from "react"
+
 export const PageSubtitle = ({
   className = "",
   children,
 }: {
   className?: string
-  children: string
+  children: ReactNode
 }) => {
   return (
     <div className={"text-on-surface-variant max-w-xl" + className}>

@@ -1,16 +1,16 @@
 import { formatPrice } from "@/5_shared/lib"
 
 export const ProductPrice = ({
-  price,
+  price = 0,
   className = "",
 }: {
-  price: number
+  price?: number
   className?: string
 }) => {
   return (
-    <div>
-      <p className={"text-xl text-primary" + className}>{formatPrice(price)}</p>
-      <p className="text-[10px]">с НДС 22%</p>
+    <div className={className}>
+      <p className={"text-lg text-primary"}>{formatPrice(price)}</p>
+      <p className="text-xs">с НДС 22%</p>
     </div>
   )
 }
