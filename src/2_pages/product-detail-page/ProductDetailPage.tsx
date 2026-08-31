@@ -20,13 +20,16 @@ import {
 } from "./"
 
 export const ProductDetailPage = () => {
+
   const { id } = useParams()
   const { productDetail, isLoading } = useProductDetailQuery(id)
   const { addProduct, cartItems } = useCartStore((state) => state)
   let cartIncludesProducts
+  
   if (productDetail) {
     cartIncludesProducts = cartItems.map((i) => i.id).includes(productDetail.id)
   }
+
   return isLoading ? (
     <div className="w-full h-150 flex items-center justify-center">
       <Loader2 size={160} className="animate-spin text-primary/20" />

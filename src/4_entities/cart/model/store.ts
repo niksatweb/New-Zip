@@ -11,6 +11,7 @@ import type { ProductDetail } from "@/4_entities/product"
 interface cartState {
   cartItems: CartItem[]
   addProduct: (product: ProductDetail) => void
+  increaseQuantity: (id: string) => void
   removeItem: (id: ProductBackend["id"]) => void
   removeAllProducts: () => void
 }
@@ -46,6 +47,7 @@ export const useCartStore = create<cartState>()(
           cartItems: state.cartItems.filter((i: CartItem) => i.id !== id),
         })),
       removeAllProducts: () => set({ cartItems: [] }),
+      increaseQuantity: () => {},
     }),
     { name: "cartItem" }
   )

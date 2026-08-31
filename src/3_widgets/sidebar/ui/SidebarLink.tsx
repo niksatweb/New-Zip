@@ -1,24 +1,23 @@
-import type { ReactNode } from "react"
-import { Link } from "react-router"
+import type { MouseEventHandler, ReactNode } from "react"
 
 export const SidebarLink = ({
   className = "",
   children,
-  to,
+  onClick,
 }: {
   className?: string
   children: ReactNode
-  to: string
+  onClick: MouseEventHandler
 }) => {
   return (
-    <Link
-      to={to}
+    <button
+      onClick={onClick}
       className={
         className +
-        "block pl-1 py-3 transition-all ease-in duration-300 "
+        "block pl-1 py-3 transition-all ease-in duration-300 w-full text-left cursor-pointer "
       }
     >
       {children}
-    </Link>
+    </button>
   )
 }

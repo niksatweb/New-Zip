@@ -25,7 +25,6 @@ export const CartItemCard = ({
   }
   const addToCart = useCartStore((state) => state.addProduct)
 
-
   return (
     <div
       onClick={handleCardClick}
@@ -54,9 +53,11 @@ export const CartItemCard = ({
       <div className="flex justify-between">
         <ProductPrice price={item.price} />
       </div>
-      <button className="px-1 bg-slate-300 rounded-2">-</button>
-      <div className="mx-2">{`Quantity: ${item.quantity}`}</div>
-      <button className="px-1 bg-slate-300">+</button>
+      <div className="flex justify-stretch items-center">
+        <button className="w-8 h-8 px-1 bg-slate-300 cursor-pointer hover:bg-slate-400">-</button>
+        <div className="mx-2">{`Quantity: ${item.quantity}`}</div>
+        <button className="w-8 h-8 px-1 bg-slate-300 cursor-pointer hover:bg-slate-400">+</button>
+      </div>
     </div>
   )
 }

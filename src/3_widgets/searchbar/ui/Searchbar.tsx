@@ -3,9 +3,11 @@ import { Input } from "@/5_shared/ui"
 export const Searchbar = ({
   className,
   placeholder,
+  name
 }: {
   className?: string
   placeholder?: string
+  name: string
 }) => {
   return (
     <label className={"input " + (className ?? "")}>
@@ -25,7 +27,7 @@ export const Searchbar = ({
           <path d="m24 24-8-8"></path>
         </g>
       </svg>
-      <Input type="search" placeholder={placeholder}></Input>
+      <Input name="searchInput" type="search" placeholder={placeholder}></Input>
     </label>
   )
 }

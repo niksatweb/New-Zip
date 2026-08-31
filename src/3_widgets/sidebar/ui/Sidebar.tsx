@@ -1,26 +1,20 @@
+import { useContext, useState, type MouseEventHandler } from "react"
 import { SidebarLink } from "./SidebarLink"
 import { Link, useSearchParams } from "react-router"
 
-export const Sidebar = ({ className = "" }: { className?: string }) => {
-  const categories = [
-    { value: "festo", label: "Festo" },
-    { value: "schneider", label: "Schneider" },
-    { value: "smc", label: "SMC" },
-    { value: "siemens", label: "Siemens" },
-    { value: "allen-bradley", label: "Allen-Bradley" },
-  ]
+type brandOption = string
 
-  const [searchParams] = useSearchParams()
-  const activeCategory = searchParams.get("category")
-  const createLink = (category?: string) => {
-    if (!category) return "/"
-    return `/?category=${category}`
-  }
-  const isActiveCategory = (value?: string) => {
-    if (!value && !activeCategory) return true
-    return activeCategory === value
-  }
-
+export const Sidebar = ({
+  className = "",
+  brands,
+  selectedManufacturer,
+  handleClick,
+}: {
+  className?: string
+  brands: brandOption[]
+  selectedManufacturer: string
+  handleClick: void
+}) => {
   return (
     <aside className={className}>
       <div className="py-6">
@@ -31,30 +25,32 @@ export const Sidebar = ({ className = "" }: { className?: string }) => {
           Промышленная автоматизация
         </p>
       </div>
-      <ul className={"flex flex-col gap-y-1 border-b border-primary/10 mb-2"}>
-        {categories.map((c, n) => (
+      <ul
+        className={"flex flex-col gap-y-1 border-b border-primary/10 mb-2 pb-2"}
+      >
+        {brands.map((c, n) => (
           <li className="" key={n}>
             <SidebarLink
               className={
-                isActiveCategory(c.value)
+                c === selectedManufacturer
                   ? "bg-primary text-primary-content rounded-r-lg "
                   : "hover:bg-primary/10 hover:rounded-r-lg "
               }
-              to={createLink(c.value)}
+              onClick={() => handleClick(c)}
             >
-              <span>{c.label}</span>
+              <span>{c}</span>
             </SidebarLink>
           </li>
         ))}
       </ul>
       <ul>
         <li>
-          <Link
-            className="font-bold text-center py-2 w-full border border-primary/10 block hover:bg-primary hover:text-primary-content transition-all duration-300 "
-            to="/"
+          <button
+            onClick={() => handleClick("all")}
+            className="font-bold text-center py-2 w-full border border-primary/10 block hover:bg-primary hover:text-primary-content transition-all duration-300 cursor-pointer "
           >
             Все бренды
-          </Link>
+          </button>
         </li>
       </ul>
     </aside>
