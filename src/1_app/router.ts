@@ -53,6 +53,10 @@ export const Router = createBrowserRouter([
         path: "cart",
         Component: Cart,
       },
+      {
+        path: ":brand",
+        Component: Home,
+      },
     ],
   },
 ])

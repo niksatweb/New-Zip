@@ -6,12 +6,11 @@ import {
   ProductGridSkeleton,
 } from "@/4_entities/product"
 import { useProductListQuery } from "@/4_entities/product"
-import { useContext, createContext, useState } from "react"
+import { useState } from "react"
+import { useParams } from "react-router"
 
 export function Home() {
   const { productList, isLoading } = useProductListQuery()
-  const [selectedManufacturer, setSelectedManufacturer] = useState("all")
-
   let brands = new Set()
 
   productList.forEach((p) => {
@@ -20,15 +19,17 @@ export function Home() {
     }
   })
 
+  const { brand } = useParams()
+  const currentBrand = brand || ""
+
   const filteredProductList =
-    selectedManufacturer === "all"
+    currentBrand === ""
       ? productList
       : productList.filter(
-          (p) =>
-            p.brand.toLowerCase() === selectedManufacturer.toLocaleLowerCase()
+          (p) => p.brand.toLowerCase() === currentBrand.toLocaleLowerCase()
         )
 
-  const mappedBrands = [...brands]
+  const mappedBrands = [...brands] as string[]
 
   return (
     <Container className="mx-auto flex">
@@ -36,8 +37,7 @@ export function Home() {
         <Sidebar
           brands={mappedBrands}
           className="px-6 w-64 pl-0 sticky top-0 h-full overflow-y-auto"
-          selectedManufacturer={selectedManufacturer}
-          handleClick={setSelectedManufacturer}
+          selectedBrand={currentBrand}
         ></Sidebar>
         <section className="flex-1 pb-6">
           <PageTitle>Промышленное оборудование</PageTitle>

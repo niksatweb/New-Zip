@@ -1,19 +1,21 @@
-import { useContext, useState, type MouseEventHandler } from "react"
+import {
+  useContext,
+  useState,
+  type Dispatch,
+  type MouseEventHandler,
+  type SetStateAction,
+} from "react"
 import { SidebarLink } from "./SidebarLink"
-import { Link, useSearchParams } from "react-router"
-
-type brandOption = string
+import { Link, useSearchParams, type SetURLSearchParams } from "react-router"
 
 export const Sidebar = ({
   className = "",
   brands,
-  selectedManufacturer,
-  handleClick,
+  selectedBrand,
 }: {
   className?: string
-  brands: brandOption[]
-  selectedManufacturer: string
-  handleClick: void
+  brands: string[]
+  selectedBrand: string
 }) => {
   return (
     <aside className={className}>
@@ -31,12 +33,12 @@ export const Sidebar = ({
         {brands.map((c, n) => (
           <li className="" key={n}>
             <SidebarLink
+              to={`/${c.toLowerCase()}`}
               className={
-                c === selectedManufacturer
+                c.toLowerCase() === selectedBrand.toString().toLowerCase()
                   ? "bg-primary text-primary-content rounded-r-lg "
                   : "hover:bg-primary/10 hover:rounded-r-lg "
               }
-              onClick={() => handleClick(c)}
             >
               <span>{c}</span>
             </SidebarLink>
@@ -45,12 +47,13 @@ export const Sidebar = ({
       </ul>
       <ul>
         <li>
-          <button
-            onClick={() => handleClick("all")}
+          <Link
+            to={""}
+            reloadDocument
             className="font-bold text-center py-2 w-full border border-primary/10 block hover:bg-primary hover:text-primary-content transition-all duration-300 cursor-pointer "
           >
             Все бренды
-          </button>
+          </Link>
         </li>
       </ul>
     </aside>
