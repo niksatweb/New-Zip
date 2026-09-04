@@ -48,7 +48,7 @@ export const Sidebar = ({
       <ul>
         <li>
           <Link
-            to={""}
+            to={"/"}
             reloadDocument
             className="font-bold text-center py-2 w-full border border-primary/10 block hover:bg-primary hover:text-primary-content transition-all duration-300 cursor-pointer "
           >
