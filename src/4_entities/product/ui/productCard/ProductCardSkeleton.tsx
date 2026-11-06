@@ -1,6 +1,6 @@
 export const ProductCardSkeleton = () => {
   return (
-    <div className="overflow-hidden p-1">
+    <div className="overflow-hidden">
       <div className="w-full h-56 bg-primary/20 animate-pulse"></div>
       <div className="mt-3 bg-primary/20 animate-pulse w-16 h-4"></div>
       <div className="mt-1 bg-primary/20 animate-pulse w-full h-4"></div>
